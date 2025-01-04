@@ -209,6 +209,11 @@ a {
     font-size: var(--fs-400);
 }
 
+h2>a {
+    font-size: var(--fs-600);
+}
+
+
 nav {
 
     display: flex;
