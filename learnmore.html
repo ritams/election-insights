@@ -22,6 +22,7 @@
                 <ul class="dropdown">
                     <li><a  href="index.html">Home</a></li>
                     <li><a href="team.html">Team</a></li>
+                    <li><a href="publications.html">Publications</a></li>
                     <li><a class="active" href="learnmore.html">Learn more</a></li>
                     <li><a href="insights.html">Insights</a></li>
                 </ul>
@@ -30,55 +31,124 @@
 
     <main>
         <div class="align">
-            <div class="election-insights">
-                <h1>
-                    Meet the team
-                </h1>
-                </div>
-            <div class="name-card">
-                <img src="assets/aanj.jpg" alt="">
-                <div class="name-card-text">
-                    <h2><a href="http://aanjaneyakumar.com">Aanjaneya Kumar</a></h2>
-                    <div class="subtitle">
-                        <p>
-                            Post Doctoral Fellow at Santa Fe Institute and Princeton
-                        </p>
-                    </div>
+            <div class="qas">
+                <div class="question">What is voter turnout?</div>
+                <div class="anwer">
                     <p>
-                        Aanjaneya is interested in the study of stochastic models of complex systems. Over the last few years, his primary aim has been to obtain insight into practically relevant problems by first formulating suitable mathematical models and then analyzing them using tools from statistical physics, network science, and evolutionary game theory. His research projects thus far can be broadly classified into the following themes - (i) extremal statistics and rare events, (ii) social dynamics and cultural evolution, and lastly, (iii) partially observed stochastic processes, which was also the theme of his PhD research at the Indian Institute of Science Education and Research (IISER) Pune, India.
-                        Going forward, apart from the aforementioned research directions, he is excited by the prospect of exploring the theme of Designing Resilient Institutions.
-                    </p>
-                </div>
-            </div>
-            <div class="name-card">
-                <img src="assets/ritam.jpeg" alt="">
-                <div class="name-card-text">
-                    <h2><a href="http://ritampal.com">Ritam Pal</a></h2>
-                    <div class="subtitle">
-                        <p>
-                            PhD student at IISER Pune
-                        </p>
-                    </div>
-                    <p>
-                        Ritam is interested in studying complex systems which are at the intersection of Physics and Social Sciences using insights for Statistical Physics and Graph theory. In particular, his primary focus during the last few years has been to understand the dynamics of public opinions, which can be leveraged to design intervention to reduce extreme opinion polarization. 
-                        He is also interested in studying elections through simple staistical modeling.
+                         Voter turnout is the number of eligible voters who actually cast their votes in an election. 
+                         Often turnout is expressed as percentage of the total number of eligible voters. However, we 
+                         use the raw turnout number through out our analysis.
                     </p>
                 </div>
             </div>
 
-            <div class="name-card">
-                <img src="assets/santh.jpg" alt="">
-                <div class="name-card-text">
-                    <h2><a href="http://sites.iiserpune.ac.in/~santh/">M. S. Santhanam</a></h2>
-                    <div class="subtitle">
-                        <p>
-                            Professor at IISER Pune
-                        </p>
-                    </div>
+            <div class="qas">
+                <div class="question">What is FPTP electoral system?</div>
+                <div class="anwer">
                     <p>
-                        Santhanam is a faculty of physics at Indian Institute of Science Education and Research, Pune, India. His research interests broadly cover the areas of chaos and nonlinear dynamics, quantum chaos, quantum computation and machine learning, statistical physics, complex networks, extreme events and complex systems. Specifically, the problems range from driven quantum systems and random matrix theory to random walks and extreme events on networks and data science.
+                        First Past the Post (FPTP) is a simple voting method where voters pick one candidate, 
+                        and the one with the most votes wins. It's popular in countries like the U.S., Canada, 
+                        India, and the UK for various elections.
                     </p>
                 </div>
+            </div>
+            <div class="qas">
+                <div class="question">What is margin of victory?</div>
+                <div class="anwer">
+                    <p>
+                        The margin of victory is the difference in votes between the winner and the runner-up in an election.
+                        It is an indicator of the competitiveness of an election.
+                    </p>
+                </div>
+            </div>
+            <div class="qas">
+                <div class="question">Why we need specific margin?</div>
+                <div class="anwer">
+                    <p>
+                        The margin of victory shows how competitive an election is, but it's more meaningful when you know the turnout. For instance, a margin of 900 votes could mean a close race in a large parliamentary constituency with high turnout, but a landslide at a small polling booth.
+                        To better capture competition regardless of turnout, we use "specific margin," which is the margin of victory divided by the turnout.
+                    </p>
+                </div>
+            </div>
+            <div class="qas">
+                <div class="question">What is universality?</div>
+                <div class="anwer">
+                    <p>
+                        Imagine uncovering patterns so robust they hold true across the globe, 
+                        regardless of country, culture, or rules. This is the essence of universality — simple, 
+                        universal trend hidden within the chaos of complex systems like elections. 
+                    </p>
+                </div>
+            </div>
+
+            <div class="qas">
+                <div class="question">Why effectinve number of candidate is important?</div>
+                <div class="anwer">
+                    <p>
+                    In elections, most votes usually go to just a few candidates. For example, in our analysis of 34 countries,
+                     the top three candidates typically get about 90% of the votes. To account for this disproportionate effect, 
+                     researchers use the "effective number of candidates". This method captures competition more accurately by
+                      weighing candidates based on their vote shares, rather than simply counting all candidates. We find this 
+                      approach particularly useful for predicting the vote distributions of the winner and the runner-up.
+                    </p>
+                </div>
+            </div>
+            <div class="qas">
+                <div class="question">Can we predict election result using this framework?</div>
+                <div class="anwer">
+                    <p>
+                        We can NOT predict election winners with this framework, but using turnout data alone, 
+                        we can estimate important electoral statistics like margins and the votes received the 
+                        winner and runner-up. We've also discovered a universal pattern in election data. 
+                        Together, these analyses can help flag potential electoral malpractice.
+                    </p>
+                </div>
+            </div>
+            <div class="qas">
+                <div class="question">What should a common voter learn from universality?</div>
+                <div class="anwer">
+                    <p>
+                        Across the world, as in India, elections are a volatile mix of emotions, competing ideologies, 
+                        and sometimes even violence. Universality suggests that beneath this apparent chaos and cacophony,
+                         there is some underlying order in elections, regardless of where and when they are held. More 
+                         importantly, universality can be useful to flag potential electoral malpractice.
+                    </p>
+                </div>
+            </div>
+            <div class="qas">
+                <div class="question">Do these results hold for Indian elections?</div>
+                <div class="anwer">
+                    <p>
+                        Yes, all the results hold for Indian election even at different electoral scales, from polling booth to 
+                        parliamentary constituency. 
+                    </p>
+                </div>
+            </div>
+            <div class="qas">
+                <div class="question">Are there other type of electoral system (apart from FPTP)?</div>
+                <div class="anwer">
+                    <p>
+                        While First Past the Post (FPTP) is one of the simplest electoral systems, there are several 
+                        others used for different types of elections, such as the Condorcet and Borda methods. For a detailed
+                         account of various electoral systems, check out our recent article published in The Hindu.
+                    </p>
+                </div>
+            </div>
+            <div class="qas">
+                <div class="question">Why study elections from physics perspective?</div>
+                <div class="anwer">
+                    <p>
+                        Studying elections from a physics perspective helps us understand how complex interactions between individuals 
+                        can lead to predictable, large-scale patterns. Just like how the behavior of gas molecules or financial markets 
+                        can be understood through statistical physics, elections offer a unique opportunity to see how collective 
+                        decision-making works. This approach can simplify the complexities of elections, making them easier to understand 
+                        and predict, and even help safeguard their integrity.
+                    </p>
+                </div>
+            </div>
+            <div class="qas">
+                <div class="question"></div>
+                <div class="anwer"></div>
             </div>
         </div>
 
@@ -92,6 +162,7 @@
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="team.html">Team</a></li>
+                <li><a href="publications.html">Publications</a></li>
                 <li><a href="learnmore.html">Learn more</a></li>
                 <li><a href="insights.html">Insights</a></li>
             </ul>
