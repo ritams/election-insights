@@ -154,6 +154,7 @@ body {
     font-weight: var(--fw-light);
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
 
 }
 
@@ -169,6 +170,7 @@ header {
 }
 
 footer {
+    margin-top: auto;
     background-color: var(--clr-bg-500);
     color: var(--clr-text-200);
     padding-left: 5%;
@@ -201,6 +203,10 @@ p {
     font-size: var(--fs-400);
     font-weight: var(--fw-light);
     margin-bottom: 0.5rem;
+}
+
+a {
+    font-size: var(--fs-400);
 }
 
 nav {
@@ -363,7 +369,7 @@ select {
     margin-bottom: 2rem;
 }
 .question {
-    font-size: 1.25rem;
+    font-size: var(--fs-600);
     font-weight: var(--fw-regular);
     margin-bottom: 0.5rem;
 }
@@ -382,6 +388,10 @@ select {
     margin-bottom: 3rem;
 }
 
+
+a:hover {
+    color: var(--clr-accent-warm);
+}
 @media screen and (min-width: 600px) and (max-width: 1000px){
     ::-webkit-scrollbar {
         width: 5px;
@@ -514,6 +524,8 @@ select {
    }
 
 }
+
+
 
 
 
