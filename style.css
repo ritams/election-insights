@@ -83,8 +83,8 @@ ul {
 
 
 :root {
-    --clr-bg-100: #F0FFE7;
-    --clr-bg-200: #DEF6CF;
+    --clr-bg-100: #f9fdf6;
+    --clr-bg-200: #d3f1c1;
     --clr-bg-500: #4C714D;
 
     --clr-text-100: #F0FFE7;
@@ -307,7 +307,6 @@ nav {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-
     margin-bottom: 3rem;
 }
 

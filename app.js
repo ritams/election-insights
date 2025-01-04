@@ -5,10 +5,10 @@ window.onload=function(){
     menu.addEventListener('click', () => {
     
     
-    if (dropdown.style.display == "none") {
-        dropdown.style.display = "flex";
-    } else {
+    if (dropdown.style.display == "flex") {
         dropdown.style.display = "none";
+    } else {
+        dropdown.style.display = "flex";
     }
     
    })
