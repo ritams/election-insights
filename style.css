@@ -118,6 +118,27 @@ ul {
 
 }
 
+/* custom scroll bar */
+/* width */
+::-webkit-scrollbar {
+    width: 3px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: var(--clr-bg-200)
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: var(--clr-text-500)
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--clr-text-900)
+  }
+
 
 * {
     /* border: 1px solid #92af80; */
@@ -170,8 +191,8 @@ h2 {
     font-weight: var(--fw-bold);
 }
 h3 {
-    font-size: var(--fs-550);
-    font-weight: var(--fw-bold);
+    font-size: var(--fs-600);
+    font-weight: var(--fw-regular);
 }
 
 p {
@@ -269,6 +290,10 @@ nav {
     h2 {
         margin-bottom: 1rem;
     }
+
+    p {
+        margin-top: 2rem;
+    }
 }
 .footer-title {
     font-size: var(--fs-500);
@@ -336,4 +361,18 @@ select {
     font-size: 1.25rem;
     font-weight: var(--fw-regular);
     margin-bottom: 0.5rem;
+}
+
+.authors, .published {
+    color: var(--clr-text-500);
+    margin-bottom: 0.2rem;
+}
+
+.abstract {
+    margin-top: 1.5rem;
+    font-size: var(--fs-600);
+}
+
+.article {
+    margin-bottom: 3rem;
 }
