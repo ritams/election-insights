@@ -5,20 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Election Insights - Santhanam Lab at IISER Pune</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/png" href="assets/logo.png">
     <script src="app.js"></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"></script> 
+    <link rel="icon" type="image/png" href="assets/logo.png">    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"></script> 
 </head>
 <body>
     <header>
         <nav>
-        <a class="logo" href="index.html"><span class="election">Election</span><span class="insights">insights</span></a>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="team.html">Team</a></li>
-                <li><a href="learnmore.html">Learn more</a></li>
-                <li><a href="insights.html">Insights</a></li>
-            </ul>
+            <div class="topbar">
+            <a class="logo" href="index.html"><span class="election">Election</span><span class="insights">insights</span></a>
+           <div id="hamburger-menu">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+           </div>
+            </div>
+                <ul class="dropdown">
+                    <li><a class="active" href="index.html">Home</a></li>
+                    <li><a href="team.html">Team</a></li>
+                    <li><a href="learnmore.html">Learn more</a></li>
+                    <li><a href="insights.html">Insights</a></li>
+                </ul>
         </nav>
     </header>
 
@@ -99,5 +105,7 @@
 
        
     </footer>
+
+    
 </body>
 </html>

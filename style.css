@@ -28,8 +28,6 @@ html:focus-within {
 }
 
 
-
-
 html,
 body {
     height: 100%;
@@ -173,10 +171,12 @@ p {
 }
 
 nav {
+
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     gap: 1rem;
+
     ul {
         display: flex;
         flex-direction: column;
@@ -198,7 +198,34 @@ nav {
     color: var(--clr-accent-warm);
 }
 
+.topbar {
+    background-color: var(--clr-bg-200);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
+
+/* styling the checkbox to be hamburger menu */
+#hamburger-menu {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem
+}
+.line {
+    width: 2rem;
+    height: 0.3rem;
+    background-color: var(--clr-text-900);
+    border-radius: 10rem;
+}
+.dropdown {
+    display: none;
+}
+
+.active {
+    color: var(--clr-accent-warm);
+}
 .election-insights span {
     color: var(--clr-accent-warm);
     font-weight: var(--fw-light);
