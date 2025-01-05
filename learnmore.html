@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Election Insights - Santhanam Lab at IISER Pune</title>
+    <title>Election Insights</title>
     <link rel="stylesheet" href="style.css">
     <script src="app.js"></script>
     <link rel="icon" type="image/png" href="assets/logo.png">    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"></script> 
@@ -31,13 +31,33 @@
 
     <main>
         <div class="align">
+
+	    <div class="qas">
+                <div class="question">What is the basis of your research work on elections?</div>
+                <div class="answer">
+                    <p>
+		Our research work on elections is based on (a) actual election data drawn from various countries, and (b) a mathematical model that we introduced called the Random Voting Model (RVM). Those interested in the technical details of data and model aspects, please refer to our published papers.
+                    </p>
+                </div>
+            </div>
+
+	    <div class="qas">
+                <div class="question">Can I use these data and models to study elections? </div>
+                <div class="answer">
+                    <p>
+                   Yes. All the data we had used is available in the public domain. The sources of data and the mathematical model we introduced (Random Voting Model) is described in our published paper. For instance, the Election Commission of India provides detailed data of all the elections since 1951 on its website.  All are free to use the data and the mathematical model to study elections further with appropriate citations whereever necessary.
+                    </p>
+                </div>
+            </div>
+
+
             <div class="qas">
                 <div class="question">What is voter turnout?</div>
                 <div class="answer">
                     <p>
                          Voter turnout is the number of eligible voters who actually cast their votes in an election. 
-                         Often turnout is expressed as percentage of the total number of eligible voters. However, we 
-                         use the raw turnout number through out our analysis.
+                         Often turnout is expressed as percentage of the total number of eligible voters. However, throughout our analysis, we 
+                         use the raw turnout numbers.
                     </p>
                 </div>
             </div>
@@ -46,8 +66,8 @@
                 <div class="question">What is FPTP electoral system?</div>
                 <div class="answer">
                     <p>
-                        First Past the Post (FPTP) is a simple voting method where voters pick one candidate, 
-                        and the one with the most votes wins. It's popular in countries like the U.S., Canada, 
+                        First-Past-the-Post (FPTP) is a straightforward voting method where each voter picks only one candidate, 
+                        and the candidate getting most votes is declared the winner. It is the popular electoral system in many countries, e.g.,  the U.S., Canada, 
                         India, and the UK for various elections.
                     </p>
                 </div>
@@ -57,36 +77,40 @@
                 <div class="answer">
                     <p>
                         The margin of victory is the difference in votes between the winner and the runner-up in an election.
-                        It is an indicator of the competitiveness of an election.
+                        It is an indicator of the competitiveness of an election. Small margin implies closely fought election, while large margins imply a landslide victory.
                     </p>
                 </div>
             </div>
+
+
             <div class="qas">
-                <div class="question">Why we need specific margin?</div>
+                <div class="question">Why do we need specific margin?</div>
                 <div class="answer">
                     <p>
-                        The margin of victory shows how competitive an election is, but it's more meaningful when you know the turnout. For instance, a margin of 900 votes could mean a close race in a large parliamentary constituency with high turnout, but a landslide at a small polling booth.
-                        To better capture competition regardless of turnout, we use "specific margin", which is the margin of victory divided by the turnout.
+                        The margin of victory shows how competitive an election is, but it is more meaningful when you know the turnout. For instance, a margin of 900 votes could mean a close race in a large parliamentary constituency with high turnout, but a landslide at a small polling booth.
+                        To better capture competition regardless of turnout, we use "specific margin", which is the ratio of the margin of victory divided by the turnout.
                     </p>
                 </div>
             </div>
+
+
             <div class="qas">
                 <div class="question">What is universality?</div>
                 <div class="answer">
                     <p>
-                        Imagine uncovering patterns so robust they hold true across the globe, 
-                        regardless of country, culture, or rules. This is the essence of universality — simple, 
-                        universal trend hidden within the chaos of complex systems like elections. 
+                        Imagine uncovering patterns so robust that they hold true across the globe, 
+                        regardless of country, culture, or rules of how elections are conducted. This is the essence of universality — simple, 
+                        universal trends hidden within the chaos of complex systems like elections. 
                     </p>
                 </div>
             </div>
 
             <div class="qas">
-                <div class="question">Why effectinve number of candidate is important?</div>
+                <div class="question">Why effective number of candidate is important?</div>
                 <div class="answer">
                     <p>
                     In elections, most votes usually go to just a few candidates. For example, in our analysis of 34 countries,
-                     the top three candidates typically get about 90% of the votes. To account for this disproportionate effect, 
+                     the top three candidates typically get about 90% of all the votes. To account for this disproportionate effect, 
                      researchers use the "effective number of candidates". This method captures competition more accurately by
                       weighing candidates based on their vote shares, rather than simply counting all candidates. We find this 
                       approach particularly useful for predicting the vote distributions of the winner and the runner-up.
@@ -94,13 +118,13 @@
                 </div>
             </div>
             <div class="qas">
-                <div class="question">Can we predict election result using this framework?</div>
+                <div class="question">Can we predict election results using this framework?</div>
                 <div class="answer">
                     <p>
-                        We can NOT predict election winners with this framework, but using turnout data alone, 
+                        We can NOT predict election winners (or losers) with this framework. However, using turnout data alone, 
                         we can estimate important electoral statistics like margins and the votes received the 
                         winner and runner-up. We've also discovered a universal pattern in election data. 
-                        Together, these analyses can help flag potential electoral malpractice.
+                        Together, these analyses can help pinpoint potential large-scale electoral malpractices.
                     </p>
                 </div>
             </div>
@@ -110,42 +134,77 @@
                     <p>
                         Across the world, as in India, elections are a volatile mix of emotions, competing ideologies, 
                         and sometimes even violence. Universality suggests that beneath this apparent chaos and cacophony,
-                         there is some underlying order in elections, regardless of where and when they are held. More 
-                         importantly, universality can be useful to flag potential electoral malpractice.
+                         there is some underlying order in elections, regardless of where, when and how they are held. More 
+                         importantly, universality can be useful to indicate potential large-scale electoral malpractices.
                     </p>
                 </div>
             </div>
+
+                <div class="qas">
+                <div class="question">Did your work throw up any cases of electoral malpractices ?</div>
+                <div class="answer">
+                    <p>
+                        Yes, of the 34 countries whose election data we studied, we found pronounced cases of potential large-scale election fraud in Belarus and Ethiopia. This analysis is corroborated by several independent media reports that have cast doubts on the integrity of these elections.
+                    </p>
+                </div>
+            </div>
+
+
             <div class="qas">
-                <div class="question">Do these results hold for Indian elections?</div>
+                <div class="question">Do these results hold good for Indian elections?</div>
                 <div class="anwer">
                     <p>
-                        Yes, all the results hold for Indian election even at different electoral scales, from polling booth to 
-                        parliamentary constituency. 
+                        Yes, all the results we have obtained hold good for Indian elections at different levels, from polling booth to state assembly constituency to 
+                        parliamentary constituency levels. 
                     </p>
                 </div>
             </div>
+
             <div class="qas">
-                <div class="question">Are there other type of electoral system (apart from FPTP)?</div>
+                <div class="question">What more can you say about Indian elections?</div>
+                <div class="anwer">
+                    <p>
+                    India holds the largest election exercise in the world, the general elections, every 5 years. However, what is less appreciated is that India is perhaps the only country that maintains election data at three distinct levels -- Lok Sabha constituency, assembly constituency and polling booth levels. This database maintained by the Election Commission of India has helped us in this work.
+                    </p>
+                </div>
+            </div>
+
+            <div class="qas">
+                <div class="question">Are there other type of electoral systems (apart from FPTP)?</div>
                 <div class="answer">
                     <p>
-                        While First Past the Post (FPTP) is one of the simplest electoral systems, there are several 
+                        Yes. While First-Past-the-Post (FPTP) is one of the simplest electoral systems, there are several 
                         others used for different types of elections, such as the Condorcet and Borda methods. For a detailed
-                         account of various electoral systems, check out our recent article published in <a href="https://www.thehindu.com/sci-tech/science/physics-maths-keeping-elections-fair-representative-explained/article68120506.ece">The Hindu</a>.
+                         account of various electoral systems, check out our recent non-technical article published in <a href="https://www.thehindu.com/sci-tech/science/physics-maths-keeping-elections-fair-representative-explained/article68120506.ece"><i>The Hindu</i></a> dated 30.4.2024.
                     </p>
                 </div>
             </div>
+
             <div class="qas">
-                <div class="question">Why study elections from physics perspective?</div>
+                <div class="question">Why study elections from a physics perspective?</div>
                 <div class="answer">
                     <p>
-                        Studying elections from a physics perspective helps us understand how complex interactions between individuals 
-                        can lead to predictable, large-scale patterns. Just like how the behavior of gas molecules or financial markets 
+                        One typical view of physics is that it is concerned with electrons, atoms and molecules. When many atoms interact together in a complex fashion, new phases of matter emerge. For example, solids can emerge from gaseous phase under certain conditions. Similarly, studying elections from a physics perspective helps us understand how complex interactions between individuals 
+                        can lead to predictable, large-scale patterns of electoral outcomes. Just like how the behavior of gas molecules or financial markets 
                         can be understood through statistical physics, elections offer a unique opportunity to see how collective 
                         decision-making works. This approach can simplify the complexities of elections, making them easier to understand 
                         and predict, and even help safeguard their integrity.
                     </p>
                 </div>
             </div>
+
+
+                <div class="qas">
+                <div class="question">I would like to know more technical details about this work. Where can I find them?</div>
+                <div class="answer">
+                    <p>
+                        For more technical details, please refer to the papers listed in the <a class="active" href="publications.html">Publications</a> page.
+                    </p>
+                </div>
+            </div>
+
+
+
             <div class="qas">
                 <div class="question"></div>
                 <div class="answer"></div>
@@ -183,10 +242,10 @@
                 Support
             </div>
             <ul>
-                <li><a href="">SERB MATRIX Grant</a></li>
-                <li><a href="">PARAM Brahma</a></li>
                 <li><a href="">IISER Pune</a></li>
-                <li><a href="">PMRF</a></li>
+                <li><a href="">SERB MATRICS Grant</a></li>
+                <li><a href="">PARAM Brahma (supercomputing facility at IISER Pune)</a></li>
+                <li><a href="">Prime Minister Research Fellowship (to Aanjaneya Kumar and Ritam Pal)</a></li>
             </ul>
         </div>
 
