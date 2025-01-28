@@ -489,6 +489,16 @@ a:hover {
 
 }
 
+.footer-site-map {
+    display: flex;
+    flex-direction: row;
+    column-gap: 3rem;
+}
+
+.press-release {
+    margin-bottom: 0.5rem;
+}
+
 @media screen and (min-width: 1000px){
 
     ::-webkit-scrollbar {
