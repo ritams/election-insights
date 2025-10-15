@@ -3,136 +3,212 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Election Insights - Santhanam Lab at IISER Pune</title>
+    <title>Election Insights - Media Coverage</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="app.js"></script>
-    <link rel="icon" type="image/png" href="assets/logo.png">    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"></script> 
+    <link rel="icon" type="image/png" href="assets/logo.png">
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="topbar">
-            <a class="logo" href="index.html"><span class="election">Election</span><span class="insights">insights</span></a>
-           <div id="hamburger-menu">
-                <div class="line"></div>
-                <div class="line"></div>
-                <div class="line"></div>
-           </div>
-            </div>
-                <ul class="dropdown">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="insights.html">Insights</a></li>
-                    <li><a href="publications.html">Publications</a></li>
-                    <li><a href="learnmore.html">Learn more</a></li>
-                    <li><a href="team.html">Team</a></li>
-                    <li><a class="active" href="media.html">Media</a></li>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a class="logo" href="index.html">
+                    <span class="election">Election</span>
+                    <span class="logo-accent">insights</span>
+                </a>
+                <ul class="nav-links">
+                    <li><a class="nav-link" href="index.html">Home</a></li>
+                    <li><a class="nav-link" href="insights.html">Insights</a></li>
+                    <li><a class="nav-link" href="blogs.html">Blogs</a></li>
+                    <li><a class="nav-link" href="publications.html">Publications</a></li>
+                    <li><a class="nav-link" href="learnmore.html">Learn more</a></li>
+                    <li><a class="nav-link" href="team.html">Team</a></li>
+                    <li><a class="nav-link active" href="media.html">Media</a></li>
                 </ul>
-        </nav>
+                <button class="mobile-menu-btn" id="hamburger-menu">
+                    <span>☰</span>
+                </button>
+            </nav>
+        </div>
     </header>
 
+    <!-- Main Content -->
     <main>
-        <div class="align">
-            <h1 class="press-release">
-                Press Reports
-            </h1>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1 class="hero-title">Media Coverage</h1>
+                <p class="hero-subtitle">
+                    Our research featured in leading publications worldwide.
+                </p>
+            </div>
+        </section>
 
-            <section class="press-release">
-                <h3>
-                    <a href="https://www.nature.com/articles/d41586-025-00023-4">Voter turnout drives margins of victory ― if elections are fair</a>
-                </h3>
-                <div class="date-publishers">
-                    Nature, January 10, 2025
-                </div>
-            </section>
+        <!-- Press Coverage -->
+        <section class="section">
+            <div class="container">
+                <div style="display: grid; gap: var(--space-8);">
 
-            <section class="press-release">
-                <h3>
-                    <a href="https://www.nature.com/articles/d44151-025-00009-1">A global formula for election margins</a>
-                </h3>
-                <div class="date-publishers">
-                    Nature India, January 15, 2025
-                </div>
-            </section>
+                    <article class="card">
+                        <h4>Voter turnout drives margins of victory ― if elections are fair</h4>
+                        <p style="color: var(--clr-text-tertiary); font-size: var(--fs-sm); margin: var(--space-2) 0;">
+                            January 10, 2025 • Nature • 
+                            <a href="https://www.nature.com/articles/d41586-025-00023-4" style="color: var(--clr-accent-primary); font-size: var(--fs-sm); text-decoration: none;">Read Article</a>
+                        </p>
+                    </article>
 
-            <section class="press-release">
-                <h3>
-                    <a href="https://timesofindia.indiatimes.com/city/pune/iisers-global-study-unveils-universal-poll-pattern-may-aid-in-fraud-detection/articleshow/117158218.cms">IISER’s global study unveils universal poll pattern, may aid in fraud detection</a>
-                </h3>
-                <div class="date-publishers">
-                    Times of India, January 12, 2025
-                </div>
-            </section>
+                    <article class="card">
+                        <h4>A global formula for election margins</h4>
+                        <p style="color: var(--clr-text-tertiary); font-size: var(--fs-sm); margin: var(--space-2) 0;">
+                            January 15, 2025 • Nature India • 
+                            <a href="https://www.nature.com/articles/d44151-025-00009-1" style="color: var(--clr-accent-primary); font-size: var(--fs-sm); text-decoration: none;">Read Article</a>
+                        </p>
+                    </article>
 
-            <section class="press-release">
-                <h3>
-                    <a href="https://indianexpress.com/article/cities/pune/iiser-pune-study-voter-turnout-predict-winning-margins-9773564/">IISER Pune study shows how voter turnout can predict winning margins</a>
-                </h3>
-                <div class="date-publishers">
-                    The Indian Express, January 11, 2025
-                </div>
-            </section>
-            
-            <section class="press-release">
-                <h3>
-                    <a href="https://www.hindustantimes.com/cities/pune-news/elections-across-world-display-universal-trend-voter-turnout-drives-victory-margins-101736883232828.html">Elections across world display universal trend: Voter turnout drives victory margins</a>
-                </h3>
-                <div class="date-publishers">
-                    Hindustan Times, January 15, 2025
-                </div>
-            </section>
+                    <article class="card">
+                        <h4>IISER's global study unveils universal poll pattern, may aid in fraud detection</h4>
+                        <p style="color: var(--clr-text-tertiary); font-size: var(--fs-sm); margin: var(--space-2) 0;">
+                            January 12, 2025 • Times of India • 
+                            <a href="https://timesofindia.indiatimes.com/city/pune/iisers-global-study-unveils-universal-poll-pattern-may-aid-in-fraud-detection/articleshow/117158218.cms" style="color: var(--clr-accent-primary); font-size: var(--fs-sm); text-decoration: none;">Read Article</a>
+                        </p>
+                    </article>
 
-            <section class="press-release">
-                <h3>
-                    <a href="https://www.punekarnews.in/elections-across-the-world-display-a-universal-feature-voter-turnout-drives-victory-margins/">Elections across the world display a universal feature: voter turnout drives victory margins</a>
-                </h3>
-                <div class="date-publishers">
-                    Punekar News, January 11, 2025
-                </div>
-            </section>
+                    <article class="card">
+                        <h4>IISER Pune study shows how voter turnout can predict winning margins</h4>
+                        <p style="color: var(--clr-text-tertiary); font-size: var(--fs-sm); margin: var(--space-2) 0;">
+                            January 11, 2025 • The Indian Express • 
+                            <a href="https://indianexpress.com/article/cities/pune/iiser-pune-study-voter-turnout-predict-winning-margins-9773564/" style="color: var(--clr-accent-primary); font-size: var(--fs-sm); text-decoration: none;">Read Article</a>
+                        </p>
+                    </article>
 
-            <section class="press-release">
-                <h3>
-                    <a href="https://epaper.pudhari.news/editionname/Pimpri/PUDHARI_PUNP/page/4/article/PUDHARI_PUNP_20250126_04_2">महासंगणक आता देऊ शकेल निवडणुकांचे अचूक अंदाज</a>
-                </h3>
-                <div class="date-publishers">
-                    Pudhari, January 26, 2025
-                </div>
-            </section>
-           
-        </div>
+                    <article class="card">
+                        <h4>Elections across world display universal trend: Voter turnout drives victory margins</h4>
+                        <p style="color: var(--clr-text-tertiary); font-size: var(--fs-sm); margin: var(--space-2) 0;">
+                            January 15, 2025 • Hindustan Times • 
+                            <a href="https://www.hindustantimes.com/cities/pune-news/elections-across-world-display-universal-trend-voter-turnout-drives-victory-margins-101736883232828.html" style="color: var(--clr-accent-primary); font-size: var(--fs-sm); text-decoration: none;">Read Article</a>
+                        </p>
+                    </article>
 
+                    <article class="card">
+                        <h4>Elections across the world display a universal feature: voter turnout drives victory margins</h4>
+                        <p style="color: var(--clr-text-tertiary); font-size: var(--fs-sm); margin: var(--space-2) 0;">
+                            January 11, 2025 • Punekar News • 
+                            <a href="https://www.punekarnews.in/elections-across-the-world-display-a-universal-feature-voter-turnout-drives-victory-margins/" style="color: var(--clr-accent-primary); font-size: var(--fs-sm); text-decoration: none;">Read Article</a>
+                        </p>
+                    </article>
+
+                    <article class="card">
+                        <h4>महासंगणक आता देऊ शकेल निवडणुकांचे अचूक अंदाज</h4>
+                        <p style="color: var(--clr-text-tertiary); font-size: var(--fs-sm); margin: var(--space-2) 0;">
+                            January 26, 2025 • Pudhari • 
+                            <a href="https://epaper.pudhari.news/editionname/Pimpri/PUDHARI_PUNP/page/4/article/PUDHARI_PUNP_20250126_04_2" style="color: var(--clr-accent-primary); font-size: var(--fs-sm); text-decoration: none;">Read Article</a>
+                        </p>
+                    </article>
+
+                </div>
+            </div>
+        </section>
     </main>
 
-    <footer>
-        <div class="footer-group">
-            <div class="footer-title">
-                Site Map
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div>
+                <h4 class="footer-title">Site Map</h4>
+                <div class="footer-links site-map-links">
+                        <a class="footer-link" href="index.html">Home</a>
+                        <a class="footer-link" href="insights.html">Insights</a>
+                        <a class="footer-link" href="blogs.html">Blogs</a>
+                        <a class="footer-link" href="publications.html">Publications</a>
+                        <a class="footer-link" href="learnmore.html">Learn more</a>
+                        <a class="footer-link" href="team.html">Team</a>
+                        <a class="footer-link" href="media.html">Media</a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="footer-title">Contact</h4>
+                    <div class="footer-links">
+                        <a class="footer-link" href="https://sites.iiserpune.ac.in/~santh">M. S. Santhanam</a>
+                        <a class="footer-link" href="mailto:santh@iiserpune.ac.in">santh@iiserpune.ac.in</a>
+                        <a class="footer-link" href="https://www.iiserpune.ac.in">IISER Pune, India</a>
+                    </div>
+                </div>
             </div>
-            <div class="footer-site-map">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="insights.html">Insights</a></li>
-                <li><a href="publications.html">Publications</a></li>
-            </ul>
-            <ul>
-                <li><a href="learnmore.html">Learn more</a></li>
-                <li><a href="team.html">Team</a></li>
-                <li><a href="media.html">Media</a></li>
-            </ul>
-        </div>
-        </div>
-        <div class="footer-group">
-            <div class="footer-title">
-                Contact
-            </div>
-            <ul>
-                <li><a href="https://sites.iiserpune.ac.in/~santh">M. S. Santhanam</a></li>
-                <li><a href="mailto:santh@iiserpune.ac.in"> s&#97;nth&#64;iiserpune&#46;ac.in</a></li>
-                <li><a href="https://www.iiserpune.ac.in">IISER Pune, India</a></li>
-            </ul>
-        </div>       
-    </footer>
+        </footer>
 
-    
+    <script>
+        // Modern navbar scroll effects
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu toggle with animation
+        document.getElementById('hamburger-menu').addEventListener('click', function() {
+            const navLinks = document.querySelector('.nav-links');
+            const isOpen = navLinks.classList.contains('mobile-open');
+
+            if (isOpen) {
+                closeMobileNav();
+            } else {
+                openMobileNav();
+            }
+        });
+
+        function openMobileNav() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.add('mobile-open');
+            
+            // Add close button if it doesn't exist
+            if (!navLinks.querySelector('.mobile-nav-close')) {
+                const closeBtn = document.createElement('button');
+                closeBtn.className = 'mobile-nav-close';
+                closeBtn.innerHTML = '×';
+                closeBtn.setAttribute('aria-label', 'Close navigation menu');
+                closeBtn.addEventListener('click', closeMobileNav);
+                navLinks.appendChild(closeBtn);
+            }
+            
+            // Add active class after a brief delay for smooth animation
+            setTimeout(() => {
+                navLinks.classList.add('active');
+            }, 10);
+            
+            document.getElementById('hamburger-menu').classList.add('active');
+            document.getElementById('hamburger-menu').textContent = '✕';
+        }
+
+        function closeMobileNav() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.remove('mobile-open', 'active');
+            
+            // Remove close button
+            const closeBtn = navLinks.querySelector('.mobile-nav-close');
+            if (closeBtn) {
+                closeBtn.remove();
+            }
+            
+            document.getElementById('hamburger-menu').classList.remove('active');
+            document.getElementById('hamburger-menu').textContent = '☰';
+        }
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function() {
+                if (window.innerWidth <= 768) {
+                    closeMobileNav();
+                }
+            });
+        });
+    </script>
 </body>
 </html>
