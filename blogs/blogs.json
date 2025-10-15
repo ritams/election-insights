@@ -1,0 +1,14 @@
+[
+  {
+    "file": "Universal Statistics of Competition in Democratic Elections.md",
+    "date": "2024-01-05",
+    "title": "Universal Statistics of Competition in Democratic Elections",
+    "excerpt": "Researchers at IISER Pune identified a universal statistical pattern in democratic elections across 32 countries by analyzing the scaled ratio of victory margin to voter turnout, providing a parameter-free Random Voting Model to explain this phenomenon and a new indicator for potential electoral malpractices."
+  },
+  {
+    "file": "Voter Turnouts Govern Key Electoral Statistics.md",
+    "date": "2025-01-05",
+    "title": "Voter Turnouts Govern Key Electoral Statistics",
+    "excerpt": "This research from IISER Pune demonstrates that voter turnout distributions hold crucial predictive power for key electoral statistics such as winner votes, runner-up votes, and margins of victory. Applying the Random Voting Model to extensive Indian election data, the study accurately predicts these distributions and reveals a unique scale-invariance in margin distributions across different electoral scales."
+  }
+]

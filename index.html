@@ -24,6 +24,7 @@
                 <ul class="nav-links">
                     <li><a class="nav-link active" href="index.html">Home</a></li>
                     <li><a class="nav-link" href="insights.html">Insights</a></li>
+                    <li><a class="nav-link" href="blogs.html">Blogs</a></li>
                     <li><a class="nav-link" href="publications.html">Publications</a></li>
                     <li><a class="nav-link" href="learnmore.html">Learn more</a></li>
                     <li><a class="nav-link" href="team.html">Team</a></li>
@@ -43,12 +44,28 @@
             <div class="container">
                 <h1 class="hero-title">Election Insights</h1>
                 <p class="hero-subtitle">
-                    Uncovering universal patterns, safeguarding Democracy through scientific analysis of election data.
+                    Uncovering universal patterns, safeguarding Democracy.
                 </p>
-                <a href="insights.html" class="cta-button">
-                    Explore Insights
-                    <span>→</span>
-                </a>
+                <div class="button-group">
+                    <a href="insights.html" class="cta-button">
+                        Explore Insights
+                        <span>→</span>
+                    </a>
+                    <a href="blogs.html" class="cta-button outline-button secondary">
+                        Read Our Blogs
+                        <span>→</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recent Blogs Section -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Recent Blogs</h2>
+                <div id="recent-blogs" class="grid" style="grid-template-columns: 1fr 1fr; gap: var(--space-8);">
+                    <!-- Recent blogs will be loaded here dynamically -->
+                </div>
             </div>
         </section>
 
@@ -151,6 +168,7 @@
                     <div class="footer-links site-map-links">
                         <a class="footer-link" href="index.html">Home</a>
                         <a class="footer-link" href="insights.html">Insights</a>
+                        <a class="footer-link" href="blogs.html">Blogs</a>
                         <a class="footer-link" href="publications.html">Publications</a>
                         <a class="footer-link" href="learnmore.html">Learn more</a>
                         <a class="footer-link" href="team.html">Team</a>
@@ -208,6 +226,38 @@
                 }
             });
         });
+
+        // Load recent blogs
+        async function loadRecentBlogs() {
+            try {
+                const response = await fetch('blogs/blogs.json');
+                const blogs = await response.json();
+
+                // Sort by date descending (most recent first)
+                blogs.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+                // Take the first two (most recent)
+                const recentBlogs = blogs.slice(0, 2);
+
+                const recentBlogsContainer = document.getElementById('recent-blogs');
+
+                recentBlogs.forEach(blog => {
+                    const card = document.createElement('div');
+                    card.className = 'card';
+                    card.innerHTML = `
+                        <h3>${blog.title}</h3>
+                        <p>${blog.excerpt}</p>
+                        <p class="read-more-link"><a href="blogs.html" class="subtle-link">Read more...</a></p>
+                    `;
+                    recentBlogsContainer.appendChild(card);
+                });
+            } catch (error) {
+                console.error('Error loading recent blogs:', error);
+            }
+        }
+
+        // Load recent blogs on page load
+        loadRecentBlogs();
     </script>
 </body>
 </html>

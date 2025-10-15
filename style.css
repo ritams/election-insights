@@ -9,10 +9,12 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    /* border: 1px solid red; */
 }
 
 html {
     scroll-behavior: smooth;
+    
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -169,6 +171,16 @@ a:hover {
 .container {
     max-width: 1200px;
     margin: 0 auto;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Override for header to keep nav layout normal */
+.header .container {
+    display: block;
     padding: 0 var(--space-4);
 }
 
@@ -326,11 +338,16 @@ a:hover {
     background: var(--clr-accent-primary);
     color: white;
     padding : var(--space-4);
-    border-radius: var(--space-2);
+    border-radius: 4rem;
     font-weight: var(--fw-medium);
     font-size: var(--fs-lg);
     transition: all 0.2s ease;
     box-shadow: var(--shadow-lg);
+
+}
+
+.cta-button span {
+    transition: all 0.3s ease;
 }
 
 .cta-button:hover {
@@ -344,7 +361,64 @@ a:hover {
     margin-left: var(--space-2);
 }
 
-/* Cards */
+/* Outline button variant */
+.outline-button {
+    background: transparent !important;
+    border: 2px solid var(--clr-accent-primary);
+    color: var(--clr-accent-primary);
+    border-radius: 2rem;
+}
+
+.outline-button:hover {
+    background: var(--clr-accent-primary) !important;
+    color: white !important;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-xl);
+}
+
+.outline-button.secondary {
+    border-color: var(--clr-accent-secondary);
+    color: var(--clr-accent-secondary);
+}
+
+.outline-button.secondary:hover {
+    background: var(--clr-accent-secondary) !important;
+    color: white !important;
+}
+
+/* Button group for responsive layout */
+.button-group {
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+    .button-group {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.read-more-link {
+    margin: var(--space-2) 0;
+}
+
+.subtle-link {
+    font-size: var(--fs-base);
+    font-weight: var(--fw-medium);
+    color: var(--clr-accent-primary);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.subtle-link:hover {
+    color: var(--clr-accent-dark);
+}
+
 .card {
     background: var(--clr-bg-surface);
     border: 1px solid rgba(124, 58, 237, 0.2);
@@ -358,13 +432,146 @@ a:hover {
     border-color: var(--clr-accent-primary);
 }
 
-.card-title {
-    font-size: var(--fs-2xl);
+/* Prose styling for blog content */
+.prose {
+    color: var(--clr-text-secondary);
+    max-width: none;
+}
+
+.prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 {
+    color: var(--clr-text-primary);
+    margin-top: var(--space-8);
     margin-bottom: var(--space-4);
+    line-height: 1.2;
+}
+
+.prose h1 { font-size: var(--fs-4xl); }
+.prose h2 { font-size: var(--fs-3xl); }
+.prose h3 { font-size: var(--fs-2xl); }
+.prose h4 { font-size: var(--fs-xl); }
+
+.prose p {
+    margin-bottom: var(--space-4);
+    line-height: 1.7;
+}
+
+.prose ul, .prose ol {
+    margin-bottom: var(--space-4);
+    padding-left: var(--space-6);
+}
+
+.prose li {
+    margin-bottom: var(--space-2);
+}
+
+.prose a {
+    color: var(--clr-accent-primary);
+    text-decoration: underline;
+}
+
+.prose a:hover {
+    color: var(--clr-accent-dark);
+}
+
+.prose img {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--space-2);
+    margin: var(--space-4) 0;
+}
+
+.prose blockquote {
+    border-left: 4px solid var(--clr-accent-primary);
+    padding-left: var(--space-4);
+    margin: var(--space-4) 0;
+    font-style: italic;
+    color: var(--clr-text-tertiary);
+}
+
+.prose code {
+    background: var(--clr-bg-secondary);
+    padding: 0.125rem 0.25rem;
+    border-radius: var(--space-1);
+    font-family: var(--ff-mono);
+    font-size: 0.875em;
+}
+
+.prose pre {
+    background: var(--clr-bg-secondary);
+    padding: var(--space-4);
+    border-radius: var(--space-2);
+    overflow-x: auto;
+    margin: var(--space-4) 0;
+}
+
+.prose pre code {
+    background: none;
+    padding: 0;
+}
+
+.close-modal {
+    position: absolute;
+    top: var(--space-4);
+    right: var(--space-4);
+    background: var(--clr-accent-primary);
+    border: 1px solid var(--clr-accent-primary);
+    font-size: var(--fs-xl);
+    color: white;
+    cursor: pointer;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+    z-index: 10;
+    font-weight: bold;
+}
+
+.close-modal:hover {
+    background: var(--clr-accent-dark);
+    border-color: var(--clr-accent-dark);
+    transform: scale(1.1);
+}
+
+.blog-full-card {
+    position: relative;
 }
 
 .card-content {
     color: var(--clr-text-secondary);
+}
+
+/* Search Bar */
+.search-container {
+    display: flex;
+    justify-content: center;
+    margin-top: var(--space-8);
+}
+
+.search-input {
+    width: 100%;
+    max-width: 700px;
+    padding: var(--space-4) var(--space-6);
+    border: 1px solid rgba(124, 58, 237, 0.2);
+    border-radius: 50px;
+    font-size: var(--fs-base);
+    font-family: var(--ff-body);
+    background: var(--clr-bg-primary);
+    color: var(--clr-text-primary);
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.search-input:focus {
+    border-color: var(--clr-accent-primary);
+    box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
+    transform: translateY(-1px);
+}
+
+.search-input::placeholder {
+    color: var(--clr-text-tertiary);
 }
 
 /* Interactive Elements */
@@ -489,9 +696,8 @@ a:hover {
 }
 
 .footer-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--space-8);
+    display: flex;
+    justify-content: space-between;
     padding: 0 var(--space-4);
     max-width: 1200px;
     margin: 0 auto;
@@ -513,7 +719,8 @@ a:hover {
 .site-map-links {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 0;
+    column-gap: var(--space-4);
+    row-gap: var(--space-2);
 }
 
 .footer-link {
@@ -569,6 +776,17 @@ a:hover {
 
     .flex {
         flex-direction: column;
+    }
+
+    /* Keep button group inline on mobile but smaller */
+    .button-group {
+        gap: 0.5rem;
+        flex-direction: row;
+        flex-wrap: nowrap;
+    }
+
+    .site-map-links {
+        grid-template-columns: 1fr;
     }
 
     /* Mobile nav dropdown */
