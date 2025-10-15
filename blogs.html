@@ -162,13 +162,37 @@
         const blogsContainer = document.getElementById('blogs-container');
         let allBlogs = [];
 
+        function addHeadingIds(html) {
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(html, 'text/html');
+            const headings = doc.querySelectorAll('h1, h2, h3, h4, h5, h6');
+            headings.forEach(h => {
+                const slug = h.textContent.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+                h.id = slug;
+            });
+            return doc.body.innerHTML;
+        }
+
         async function loadBlogs() {
             try {
                 const response = await fetch('blogs/blogs.json');
                 const blogData = await response.json();
                 allBlogs = blogData; // Store all blog data
+                allBlogs.sort((a, b) => new Date(b.date) - new Date(a.date)); // Sort by date descending
 
-                displayBlogs(allBlogs); // Display all blogs initially
+                // Check for blog parameter to auto-expand
+                const urlParams = new URLSearchParams(window.location.search);
+                const blogParam = urlParams.get('blog');
+                if (blogParam) {
+                    const blogToExpand = allBlogs.find(b => b.file === blogParam);
+                    if (blogToExpand) {
+                        await loadBlogExpanded(blogToExpand.file);
+                    } else {
+                        displayBlogs(allBlogs);
+                    }
+                } else {
+                    displayBlogs(allBlogs); // Display all blogs initially
+                }
             } catch (error) {
                 console.error('Error loading blogs list:', error);
             }
@@ -186,7 +210,8 @@
             try {
                 const response = await fetch(`blogs/${file}`);
                 const md = await response.text();
-                const html = marked.parse(md);
+                let html = marked.parse(md);
+                html = addHeadingIds(html);
 
                 // Extract title from first h1
                 const titleMatch = html.match(/<h1[^>]*>(.*?)<\/h1>/);
@@ -211,6 +236,44 @@
                 blogsContainer.appendChild(card);
             } catch (error) {
                 console.error('Error loading blog:', file, error);
+            }
+        }
+
+        async function loadBlogExpanded(file) {
+            // Show loading state
+            blogsContainer.innerHTML = `
+                <article class="card blog-full-card">
+                    <div style="text-align: center; padding: var(--space-8);">
+                        <p>Loading blog...</p>
+                    </div>
+                </article>
+            `;
+
+            try {
+                const response = await fetch(`blogs/${file}`);
+                const md = await response.text();
+                let html = marked.parse(md);
+                html = addHeadingIds(html);
+
+                blogsContainer.innerHTML = `
+                    <article class="card blog-full-card">
+                        <button class="close-modal" aria-label="Close blog" onclick="location.href='blogs.html'">×</button>
+                        <div class="prose prose-lg">${html}</div>
+                    </article>
+                `;
+                // Re-render MathJax
+                if (window.MathJax) {
+                    MathJax.typeset();
+                }
+            } catch (error) {
+                console.error('Error loading expanded blog:', file, error);
+                blogsContainer.innerHTML = `
+                    <article class="card blog-full-card">
+                        <div style="text-align: center; padding: var(--space-8);">
+                            <p>Error loading blog. Please try again.</p>
+                        </div>
+                    </article>
+                `;
             }
         }
 

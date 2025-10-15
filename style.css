@@ -540,6 +540,7 @@ a:hover {
 
 .blog-full-card {
     position: relative;
+    animation: fadeIn 0.6s ease-out;
 }
 
 .card-content {

@@ -275,7 +275,7 @@
                     card.innerHTML = `
                         <h3>${blog.title}</h3>
                         <p>${blog.excerpt}</p>
-                        <p class="read-more-link"><a href="blogs.html" class="subtle-link">Read more...</a></p>
+                        <p class="read-more-link"><a href="blogs.html?blog=${encodeURIComponent(blog.file)}" class="subtle-link">Read more...</a></p>
                     `;
                     recentBlogsContainer.appendChild(card);
                 });
