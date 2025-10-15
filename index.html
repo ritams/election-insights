@@ -63,7 +63,7 @@
         <section class="section">
             <div class="container">
                 <h2 class="section-title">Recent Blogs</h2>
-                <div id="recent-blogs" class="grid" style="grid-template-columns: 1fr 1fr; gap: var(--space-8);">
+                <div id="recent-blogs" class="grid" style="gap: var(--space-8);">
                     <!-- Recent blogs will be loaded here dynamically -->
                 </div>
             </div>
@@ -72,7 +72,7 @@
         <!-- Mission Section -->
         <section class="section">
             <div class="container">
-                <div class="grid" style="grid-template-columns: 1fr 1fr;">
+                <div class="grid">
                     <div>
                         <h2>Our Mission</h2>
                         <p>
@@ -203,26 +203,54 @@
             const isOpen = navLinks.classList.contains('mobile-open');
 
             if (isOpen) {
-                navLinks.classList.remove('mobile-open');
-                this.classList.remove('active');
-                this.textContent = '☰';
+                closeMobileNav();
             } else {
-                navLinks.classList.add('mobile-open');
-                this.classList.add('active');
-                this.textContent = '✕';
+                openMobileNav();
             }
         });
+
+        function openMobileNav() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.add('mobile-open');
+            
+            // Add close button if it doesn't exist
+            if (!navLinks.querySelector('.mobile-nav-close')) {
+                const closeBtn = document.createElement('button');
+                closeBtn.className = 'mobile-nav-close';
+                closeBtn.innerHTML = '×';
+                closeBtn.setAttribute('aria-label', 'Close navigation menu');
+                closeBtn.addEventListener('click', closeMobileNav);
+                navLinks.appendChild(closeBtn);
+            }
+            
+            // Add active class after a brief delay for smooth animation
+            setTimeout(() => {
+                navLinks.classList.add('active');
+            }, 10);
+            
+            document.getElementById('hamburger-menu').classList.add('active');
+            document.getElementById('hamburger-menu').textContent = '✕';
+        }
+
+        function closeMobileNav() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.remove('mobile-open', 'active');
+            
+            // Remove close button
+            const closeBtn = navLinks.querySelector('.mobile-nav-close');
+            if (closeBtn) {
+                closeBtn.remove();
+            }
+            
+            document.getElementById('hamburger-menu').classList.remove('active');
+            document.getElementById('hamburger-menu').textContent = '☰';
+        }
 
         // Close mobile menu when clicking a link
         document.querySelectorAll('.nav-link').forEach(link => {
             link.addEventListener('click', function() {
-                const navLinks = document.querySelector('.nav-links');
-                const mobileBtn = document.getElementById('hamburger-menu');
-
                 if (window.innerWidth <= 768) {
-                    navLinks.classList.remove('mobile-open');
-                    mobileBtn.classList.remove('active');
-                    mobileBtn.textContent = '☰';
+                    closeMobileNav();
                 }
             });
         });
