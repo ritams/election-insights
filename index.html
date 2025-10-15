@@ -4,131 +4,210 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Election Insights - Santhanam Lab at IISER Pune</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="app.js"></script>
-    <link rel="icon" type="image/png" href="assets/logo.png">    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"></script> 
+    <link rel="icon" type="image/png" href="assets/logo.png">
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="topbar">
-            <a class="logo" href="index.html"><span class="election">Election</span><span class="insights">insights</span></a>
-            <div id="hamburger-menu">
-                    <div class="line"></div>
-                    <div class="line"></div>
-                    <div class="line"></div>
-            </div>
-            </div>
-                <ul class="dropdown">
-                    <li><a class="active" href="index.html">Home</a></li>
-                    <li><a href="insights.html">Insights</a></li>
-                    <li><a href="publications.html">Publications</a></li>
-                    <li><a href="learnmore.html">Learn more</a></li>
-                    <li><a href="team.html">Team</a></li>
-                    <li><a href="media.html">Media</a></li>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a class="logo" href="index.html">
+                    <span class="election">Election</span>
+                    <span class="logo-accent">insights</span>
+                </a>
+                <ul class="nav-links">
+                    <li><a class="nav-link active" href="index.html">Home</a></li>
+                    <li><a class="nav-link" href="insights.html">Insights</a></li>
+                    <li><a class="nav-link" href="publications.html">Publications</a></li>
+                    <li><a class="nav-link" href="learnmore.html">Learn more</a></li>
+                    <li><a class="nav-link" href="team.html">Team</a></li>
+                    <li><a class="nav-link" href="media.html">Media</a></li>
                 </ul>
-        </nav>
+                <button class="mobile-menu-btn" id="hamburger-menu">
+                    <span>☰</span>
+                </button>
+            </nav>
+        </div>
     </header>
 
+    <!-- Main Content -->
     <main>
-        <div class="align two-column">
-            <div class="wrapper">
-                <div class="election-insights">
-                    <h1>
-                        Election <span>insights</span>
-                    </h1>
-                </div>
-
-                <div class="subtitle">
-                    <p>
-                    Uncovering universal patterns, safeguarding Democracy...
-                    </p>
-                </div>
-
-                <div class="blurb">
-                    <p>
-                        Elections are the cornerstone of democratic societies, reflecting the collective will of the citizens. They determine governance and policy directions, making them crucial for societal progress and stability.
-                    </p>
-
-                    <p>
-                        Scientific studies of elections are essential to understand underlying patterns and ensure fairness. Our mission is to uncover universal trends in election data and develop models to detect and prevent electoral malpractices, thereby safeguarding the integrity of democratic processes worldwide.
-                    </p>
-                </div>
-            </div>
-
-            <div class="what-do-you-think">
-                <h2>
-                    What do you think?
-                </h2>
-
-                <ul>
-                    <li><a href="insights.html#margin" class="qs-homepage">Can we predict margin?</a></li>
-                    <li><a href="insights.html#universality" class="qs-homepage">What is universality?</a></li>
-                    <li><a href="insights.html#malpractice" class="qs-homepage">How to detect electoral malpractices?</a></li>
-                    <li><a href="insights.html#vote" class="qs-homepage">Can we predict vote distributions?</a></li>
-                </ul>
-                <p>
-                    Find the answers in the <a href="insights.html" class="active">Insights</a> page.
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1 class="hero-title">Election Insights</h1>
+                <p class="hero-subtitle">
+                    Uncovering universal patterns, safeguarding Democracy through scientific analysis of election data.
                 </p>
+                <a href="insights.html" class="cta-button">
+                    Explore Insights
+                    <span>→</span>
+                </a>
             </div>
-        </div>
+        </section>
 
-
-        <div class="support align">
-            <h2>
-                Support
-            </h2>
-
-            <div class="support-wrapper">
-                <div class="support-card">
-                    <p>IISER Pune, India</p>
-                </div>
-                <div class="support-card">
-                    <p>SERB MATRICS Grant</p>
-                    <p>To M. S. Santhanam</p>
-                </div>
-                <div class="support-card">
-                    <p>PARAM Brahma</p>
-                    <p>Supercomputing facility at IISER Pune</p>
-                </div>
-                <div class="support-card">
-                    <p>Prime Minister's Research Fellowship</p>
-                    <p>To Aanjaneya Kumar and Ritam Pal</p>
+        <!-- Mission Section -->
+        <section class="section">
+            <div class="container">
+                <div class="grid" style="grid-template-columns: 1fr 1fr;">
+                    <div>
+                        <h2>Our Mission</h2>
+                        <p>
+                            Elections are the cornerstone of democratic societies, reflecting the collective will of the citizens.
+                            They determine governance and policy directions, making them crucial for societal progress and stability.
+                        </p>
+                        <p>
+                            Scientific studies of elections are essential to understand underlying patterns and ensure fairness.
+                            Our mission is to uncover universal trends in election data and develop models to detect and prevent electoral malpractices,
+                            thereby safeguarding the integrity of democratic processes worldwide.
+                        </p>
+                    </div>
+                    <div class="card">
+                        <h3>What do you think?</h3>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin-bottom: 1rem;">
+                                <a href="insights.html#margin" style="display: block; padding: 1rem; background: var(--clr-bg-accent); border-radius: 0.5rem; transition: all 0.2s ease;">
+                                    Can we predict margin?
+                                </a>
+                            </li>
+                            <li style="margin-bottom: 1rem;">
+                                <a href="insights.html#universality" style="display: block; padding: 1rem; background: var(--clr-bg-accent); border-radius: 0.5rem; transition: all 0.2s ease;">
+                                    What is universality?
+                                </a>
+                            </li>
+                            <li style="margin-bottom: 1rem;">
+                                <a href="insights.html#malpractice" style="display: block; padding: 1rem; background: var(--clr-bg-accent); border-radius: 0.5rem; transition: all 0.2s ease;">
+                                    How to detect electoral malpractices?
+                                </a>
+                            </li>
+                            <li style="margin-bottom: 1rem;">
+                                <a href="insights.html#vote" style="display: block; padding: 1rem; background: var(--clr-bg-accent); border-radius: 0.5rem; transition: all 0.2s ease;">
+                                    Can we predict vote distributions?
+                                </a>
+                            </li>
+                        </ul>
+                        <p>Find the answers in the <a href="insights.html">Insights</a> page.</p>
+                    </div>
                 </div>
             </div>
-    </div>
+        </section>
 
+        <!-- Support Section -->
+        <section class="section" style="background: var(--clr-bg-secondary);">
+            <div class="container">
+                <h2 class="section-title">Supported by</h2>
+                <div class="carousel">
+                    <div class="carousel-track">
+                        <div class="carousel-item">
+                            <div class="support-logo">IISER Pune, India</div>
+                            <p class="support-text">Institutional support and research facilities.</p>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="support-logo">SERB MATRICS Grant</div>
+                            <p class="support-text">To M. S. Santhanam for research funding.</p>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="support-logo">PARAM Brahma</div>
+                            <p class="support-text">Supercomputing facility at IISER Pune.</p>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="support-logo">Prime Minister's Research Fellowship</div>
+                            <p class="support-text">To Aanjaneya Kumar and Ritam Pal.</p>
+                        </div>
+                        <!-- Duplicate for seamless loop -->
+                        <div class="carousel-item">
+                            <div class="support-logo">IISER Pune, India</div>
+                            <p class="support-text">Institutional support and research facilities.</p>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="support-logo">SERB MATRICS Grant</div>
+                            <p class="support-text">To M. S. Santhanam for research funding.</p>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="support-logo">PARAM Brahma</div>
+                            <p class="support-text">Supercomputing facility at IISER Pune.</p>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="support-logo">Prime Minister's Research Fellowship</div>
+                            <p class="support-text">To Aanjaneya Kumar and Ritam Pal.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <footer>
-        <div class="footer-group">
-            <div class="footer-title">
-                Site Map
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+                <div>
+                    <h4 class="footer-title">Site Map</h4>
+                    <div class="footer-links site-map-links">
+                        <a class="footer-link" href="index.html">Home</a>
+                        <a class="footer-link" href="insights.html">Insights</a>
+                        <a class="footer-link" href="publications.html">Publications</a>
+                        <a class="footer-link" href="learnmore.html">Learn more</a>
+                        <a class="footer-link" href="team.html">Team</a>
+                        <a class="footer-link" href="media.html">Media</a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="footer-title">Contact</h4>
+                    <div class="footer-links">
+                        <a class="footer-link" href="https://sites.iiserpune.ac.in/~santh">M. S. Santhanam</a>
+                        <a class="footer-link" href="mailto:santh@iiserpune.ac.in">santh@iiserpune.ac.in</a>
+                        <a class="footer-link" href="https://www.iiserpune.ac.in">IISER Pune, India</a>
+                    </div>
+                </div>
             </div>
-            <div class="footer-site-map">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="insights.html">Insights</a></li>
-                <li><a href="publications.html">Publications</a></li>
-            </ul>
-            <ul>
-                <li><a href="learnmore.html">Learn more</a></li>
-                <li><a href="team.html">Team</a></li>
-                <li><a href="media.html">Media</a></li>
-            </ul>
-        </div>
-        </div>
-        <div class="footer-group">
-            <div class="footer-title">
-                Contact
-            </div>
-            <ul>
-                <li><a href="https://sites.iiserpune.ac.in/~santh">M. S. Santhanam</a></li>
-                <li><a href="mailto:santh@iiserpune.ac.in"> s&#97;nth&#64;iiserpune&#46;ac.in</a></li>
-                <li><a href="https://www.iiserpune.ac.in">IISER Pune, India</a></li>
-            </ul>
-        </div>       
-    </footer>
-    
+        </footer>
+
+    <script>
+        // Modern navbar scroll effects
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu toggle with animation
+        document.getElementById('hamburger-menu').addEventListener('click', function() {
+            const navLinks = document.querySelector('.nav-links');
+            const isOpen = navLinks.classList.contains('mobile-open');
+
+            if (isOpen) {
+                navLinks.classList.remove('mobile-open');
+                this.classList.remove('active');
+                this.textContent = '☰';
+            } else {
+                navLinks.classList.add('mobile-open');
+                this.classList.add('active');
+                this.textContent = '✕';
+            }
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function() {
+                const navLinks = document.querySelector('.nav-links');
+                const mobileBtn = document.getElementById('hamburger-menu');
+
+                if (window.innerWidth <= 768) {
+                    navLinks.classList.remove('mobile-open');
+                    mobileBtn.classList.remove('active');
+                    mobileBtn.textContent = '☰';
+                }
+            });
+        });
+    </script>
 </body>
 </html>

@@ -4,143 +4,159 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Election Insights - Santhanam Lab at IISER Pune</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="app.js"></script>
-    <link rel="icon" type="image/png" href="assets/logo.png">    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"></script> 
+    <link rel="icon" type="image/png" href="assets/logo.png">
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="topbar">
-            <a class="logo" href="index.html"><span class="election">Election</span><span class="insights">insights</span></a>
-           <div id="hamburger-menu">
-                <div class="line"></div>
-                <div class="line"></div>
-                <div class="line"></div>
-           </div>
-            </div>
-                <ul class="dropdown">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="insights.html">Insights</a></li>
-                    <li><a class="active" href="publications.html">Publications</a></li>
-                    <li><a href="learnmore.html">Learn more</a></li>
-                    <li><a href="team.html">Team</a></li>
-                    <li><a  href="media.html">Media</a></li>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a class="logo" href="index.html">
+                    <span class="election">Election</span>
+                    <span class="logo-accent">insights</span>
+                </a>
+                <ul class="nav-links">
+                    <li><a class="nav-link" href="index.html">Home</a></li>
+                    <li><a class="nav-link" href="insights.html">Insights</a></li>
+                    <li><a class="nav-link active" href="publications.html">Publications</a></li>
+                    <li><a class="nav-link" href="learnmore.html">Learn more</a></li>
+                    <li><a class="nav-link" href="team.html">Team</a></li>
+                    <li><a class="nav-link" href="media.html">Media</a></li>
                 </ul>
-        </nav>
-    </header>
-    <main>
-        <div class="align">
-            <section class="article">
-                <h3>
-                    Universal Statistics of Competition in Democratic Elections
-                </h3>
-                <p class="authors">Ritam Pal, Aanjaneya Kumar, and M. S. Santhanam</p>
-                <p class="published">Published in <a href="https://journals.aps.org/prl/accepted/b707aY75A7914486748912423e9a4aee9ad6e1c92">Physical Review Letters</a>. Preprint available at <a href="https://arxiv.org/abs/2401.05065">	arXiv:2401.05065</a>.</p>
-                <p class="abstract">Abstract</p>
-                <p>
-                    Elections for public offices in democratic nations are large-scale examples of 
-                    collective decision-making. As a complex system with a multitude of interactions 
-                    among agents, we can anticipate that universal macroscopic patterns could emerge 
-                    independent of microscopic details. Despite the availability of empirical election 
-                    data, such universality, valid at all scales, countries, and elections, has not yet 
-                    been observed. In this work, we propose a parameter-free voting model and analytically 
-                    show that the distribution of the victory margin is driven by that of the voter turnout, 
-                    and a scaled measure depending on margin and turnout leads to a robust universality. 
-                    This is demonstrated using empirical election data from 34 countries, spanning multiple 
-                    decades and electoral scales. The deviations from the model predictions and universality 
-                    indicate possible electoral malpractices. We argue that this universality is a stylized 
-                    fact indicating the competitive nature of electoral outcomes.
-                </p>
-            </section>
-
-            <section class="article">
-                <h3>
-                    Voter Turnouts Govern Key Electoral Statistics
-                </h3>
-                <p class="authors">Ritam Pal, Aanjaneya Kumar, and M. S. Santhanam</p>
-                <p class="published">Preprint available at <a href="https://arxiv.org/abs/2501.01896">arXiv:2501.01896</a>.</p> 
-                <p class="abstract">Abstract</p> 
-                <p>
-                    Elections, the cornerstone of democratic societies, are usually regarded as 
-                    unpredictable due to the complex interactions that shape them at different levels. 
-                    In this work, we show that voter turnouts contain crucial information that can be 
-                    leveraged to predict several key electoral statistics with remarkable accuracy. 
-                    Using the recently proposed random voting model, we analytically derive the scaled 
-                    distributions of votes secured by winners, runner-ups, and margins of victory, and 
-                    demonstrating their strong correlation with turnout distributions. By analyzing 
-                    Indian election data -- spanning multiple decades and electoral scales -- we validate 
-                    these predictions empirically across all scales, from large parliamentary constituencies 
-                    to polling booths. Further, we uncover a surprising scale-invariant behavior in the 
-                    distributions of scaled margins of victory, a characteristic signature of Indian 
-                    elections. Finally, we demonstrate a robust universality in the distribution of 
-                    the scaled margin-to-turnout ratios.
-                    
-                </p>
-            </section>
-
-            <section class="article">
-                <h3>
-                    Indian General Elections 2024: A preliminary health-check on the electoral process
-                </h3>
-                <p class="authors">Ritam Pal, Aanjaneya Kumar, and M. S. Santhanam</p> 
-                <p class="published">Preprint available at <a href="http://dx.doi.org/10.13140/RG.2.2.14846.80960">ResearchGate, 2024</a>.</p> 
-                <p class="abstract">Abstract</p> 
-                <p>
-                    Usually, election analysis for public consumption is focused on who the winner will beor if there will 
-                    be a change of incumbent. On the date we prepared this article, the votes were yet to be counted, 
-                    and we have limited access to the turnout data in the general elections of 2024 (GE-2024). 
-                    Based on the available turnout data, in this article, we steer clear of predicting winner or loser, 
-                    but instead, we make predictions for the scaled margin distribution, which is a potent indicator of 
-                    electoral competitiveness. We employ RVM simulationin conjunction with the turnout data of 
-                    GE-2024 to derive this prediction. We contrast this prediction with the historical Lok 
-                    Sabha election data during 1999-2019. In summary, this is like a preliminary health check 
-                    on themammoth election exercise that has just concluded.                     
-                </p>
-            </section>
-
-            <section class="article">
-                <h3>
-                    The physics and maths of keeping elections fair and representative
-                </h3>
-                <p class="authors">M. S. Santhanam, Aanjaneya Kumar, and Ritam Pal</p>
-                <p class="published">Published in <a href="https://www.thehindu.com/sci-tech/science/physics-maths-keeping-elections-fair-representative-explained/article68120506.ece">The Hindu, 2024</a>. Copy available <a href="http://sites.iiserpune.ac.in/~santh/thehindu_elections_mss.png">here</a>.</p>
-            </section>
+                <button class="mobile-menu-btn" id="hamburger-menu">
+                    <span>☰</span>
+                </button>
+            </nav>
         </div>
+    </header>
 
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1 class="hero-title">Publications</h1>
+                <p class="hero-subtitle">
+                    Explore our research publications on election science and data analysis.
+                </p>
+            </div>
+        </section>
+
+        <!-- Publications -->
+        <section class="section">
+            <div class="container">
+                <div style="display: grid; gap: var(--space-8);">
+
+                    <article class="card">
+                        <h3>Universal Statistics of Competition in Democratic Elections</h3>
+                        <div style="margin: var(--space-4) 0;">
+                            <span style="color: var(--clr-text-tertiary); font-weight: 500;">Ritam Pal, Aanjaneya Kumar, and M. S. Santhanam</span>
+                        </div>
+                        <p style="color: var(--clr-text-tertiary); font-size: var(--fs-sm); margin-bottom: var(--space-4);">
+                            Published in <a href="https://journals.aps.org/prl/accepted/b707aY75A7914486748912423e9a4aee9ad6e1c92" style="color: var(--clr-accent-primary);">Physical Review Letters</a>.
+                            Preprint available at <a href="https://arxiv.org/abs/2401.05065" style="color: var(--clr-accent-primary);">arXiv:2401.05065</a>.
+                        </p>
+                        <p>
+                            Elections for public offices in democratic nations are large-scale examples of collective decision-making.
+                            As a complex system with a multitude of interactions among agents, we can anticipate that universal macroscopic patterns could emerge
+                            independent of microscopic details. Despite the availability of empirical election data, such universality, valid at all scales,
+                            countries, and elections, has not yet been observed. In this work, we propose a parameter-free voting model and analytically show
+                            that the distribution of the victory margin is driven by that of the voter turnout, and a scaled measure depending on margin
+                            and turnout leads to a robust universality. This is demonstrated using empirical election data from 34 countries, spanning
+                            multiple decades and electoral scales. The deviations from the model predictions and universality indicate possible electoral malpractices.
+                            We argue that this universality is a stylized fact indicating the competitive nature of electoral outcomes.
+                        </p>
+                    </article>
+
+                    <article class="card">
+                        <h3>Voter Turnouts Govern Key Electoral Statistics</h3>
+                        <div style="margin: var(--space-4) 0;">
+                            <span style="color: var(--clr-text-tertiary); font-weight: 500;">Ritam Pal, Aanjaneya Kumar, and M. S. Santhanam</span>
+                        </div>
+                        <p style="color: var(--clr-text-tertiary); font-size: var(--fs-sm); margin-bottom: var(--space-4);">
+                            Preprint available at <a href="https://arxiv.org/abs/2501.01896" style="color: var(--clr-accent-primary);">arXiv:2501.01896</a>.
+                        </p>
+                        <p>
+                            Elections, the cornerstone of democratic societies, are usually regarded as unpredictable due to the complex interactions that shape them at different levels.
+                            In this work, we show that voter turnouts contain crucial information that can be leveraged to predict several key electoral statistics with remarkable accuracy.
+                            Using the recently proposed random voting model, we analytically derive the scaled distributions of votes secured by winners, runner-ups, and margins of victory,
+                            and demonstrating their strong correlation with turnout distributions. By analyzing Indian election data -- spanning multiple decades and electoral scales --
+                            we validate these predictions empirically across all scales, from large parliamentary constituencies to polling booths. Further, we uncover a surprising
+                            scale-invariant behavior in the distributions of scaled margins of victory, a characteristic signature of Indian elections.
+                            Finally, we demonstrate a robust universality in the distribution of the scaled margin-to-turnout ratios.
+                        </p>
+                    </article>
+
+                    <article class="card">
+                        <h3>Indian General Elections 2024: A preliminary health-check on the electoral process</h3>
+                        <div style="margin: var(--space-4) 0;">
+                            <span style="color: var(--clr-text-tertiary); font-weight: 500;">Ritam Pal, Aanjaneya Kumar, and M. S. Santhanam</span>
+                        </div>
+                        <p style="color: var(--clr-text-tertiary); font-size: var(--fs-sm); margin-bottom: var(--space-4);">
+                            Preprint available at <a href="http://dx.doi.org/10.13140/RG.2.2.14846.80960" style="color: var(--clr-accent-primary);">ResearchGate, 2024</a>.
+                        </p>
+                        <p>
+                            Usually, election analysis for public consumption is focused on who the winner will be or if there will be a change of incumbent.
+                            On the date we prepared this article, the votes were yet to be counted, and we have limited access to the turnout data in the general elections of 2024 (GE-2024).
+                            Based on the available turnout data, in this article, we steer clear of predicting winner or loser, but instead, we make predictions for the scaled margin distribution,
+                            which is a potent indicator of electoral competitiveness. We employ RVM simulation in conjunction with the turnout data of GE-2024 to derive this prediction.
+                            We contrast this prediction with the historical Lok Sabha election data during 1999-2019. In summary, this is like a preliminary health check on the mammoth election exercise that has just concluded.
+                        </p>
+                    </article>
+
+                    <article class="card">
+                        <h3>The physics and maths of keeping elections fair and representative</h3>
+                        <div style="margin: var(--space-4) 0;">
+                            <span style="color: var(--clr-text-tertiary); font-weight: 500;">M. S. Santhanam, Aanjaneya Kumar, and Ritam Pal</span>
+                        </div>
+                        <p style="color: var(--clr-text-tertiary); font-size: var(--fs-sm); margin-bottom: var(--space-4);">
+                            Published in <a href="https://www.thehindu.com/sci-tech/science/physics-maths-keeping-elections-fair-representative-explained/article68120506.ece" style="color: var(--clr-accent-primary);">The Hindu, 2024</a>.
+                            Copy available <a href="http://sites.iiserpune.ac.in/~santh/thehindu_elections_mss.png" style="color: var(--clr-accent-primary);">here</a>.
+                        </p>
+                    </article>
+
+                </div>
+            </div>
+        </section>
     </main>
 
-    <footer>
-        <div class="footer-group">
-            <div class="footer-title">
-                Site Map
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div>
+                <h4 class="footer-title">Site Map</h4>
+                <div class="footer-links site-map-links">
+                        <a class="footer-link" href="index.html">Home</a>
+                        <a class="footer-link" href="insights.html">Insights</a>
+                        <a class="footer-link" href="publications.html">Publications</a>
+                        <a class="footer-link" href="learnmore.html">Learn more</a>
+                        <a class="footer-link" href="team.html">Team</a>
+                        <a class="footer-link" href="media.html">Media</a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="footer-title">Contact</h4>
+                    <div class="footer-links">
+                        <a class="footer-link" href="https://sites.iiserpune.ac.in/~santh">M. S. Santhanam</a>
+                        <a class="footer-link" href="mailto:santh@iiserpune.ac.in">santh@iiserpune.ac.in</a>
+                        <a class="footer-link" href="https://www.iiserpune.ac.in">IISER Pune, India</a>
+                    </div>
+                </div>
             </div>
-            <div class="footer-site-map">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="insights.html">Insights</a></li>
-                <li><a href="publications.html">Publications</a></li>
-            </ul>
-            <ul>
-                <li><a href="learnmore.html">Learn more</a></li>
-                <li><a href="team.html">Team</a></li>
-                <li><a href="media.html">Media</a></li>
-            </ul>
-        </div>
-        </div>
-        <div class="footer-group">
-            <div class="footer-title">
-                Contact
-            </div>
-            <ul>
-                <li><a href="https://sites.iiserpune.ac.in/~santh">M. S. Santhanam</a></li>
-                <li><a href="mailto:santh@iiserpune.ac.in"> s&#97;nth&#64;iiserpune&#46;ac.in</a></li>
-                <li><a href="https://www.iiserpune.ac.in">IISER Pune, India</a></li>
-            </ul>
-        </div>       
-    </footer>
+        </footer>
 
-
-    
+    <script>
+        // Mobile menu toggle
+        document.getElementById('hamburger-menu').addEventListener('click', function() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        });
+    </script>
 </body>
 </html>

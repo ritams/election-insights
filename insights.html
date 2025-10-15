@@ -4,209 +4,204 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Election Insights - Santhanam Lab at IISER Pune</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="app.js"></script>
-    <link rel="icon" type="image/png" href="assets/logo.png">    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"></script> 
+    <link rel="icon" type="image/png" href="assets/logo.png">
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="topbar">
-            <a class="logo" href="index.html"><span class="election">Election</span><span class="insights">insights</span></a>
-           <div id="hamburger-menu">
-                <div class="line"></div>
-                <div class="line"></div>
-                <div class="line"></div>
-           </div>
-            </div>
-                <ul class="dropdown">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a class="active" href="insights.html">Insights</a></li>
-                    <li><a href="publications.html">Publications</a></li>
-                    <li><a href="learnmore.html">Learn more</a></li>
-                    <li><a href="team.html">Team</a></li>
-                    <li><a  href="media.html">Media</a></li>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a class="logo" href="index.html">
+                    <span class="election">Election</span>
+                    <span class="logo-accent">insights</span>
+                </a>
+                <ul class="nav-links">
+                    <li><a class="nav-link" href="index.html">Home</a></li>
+                    <li><a class="nav-link active" href="insights.html">Insights</a></li>
+                    <li><a class="nav-link" href="publications.html">Publications</a></li>
+                    <li><a class="nav-link" href="learnmore.html">Learn more</a></li>
+                    <li><a class="nav-link" href="team.html">Team</a></li>
+                    <li><a class="nav-link" href="media.html">Media</a></li>
                 </ul>
-        </nav>
+                <button class="mobile-menu-btn" id="hamburger-menu">
+                    <span>☰</span>
+                </button>
+            </nav>
+        </div>
     </header>
 
+    <!-- Main Content -->
     <main>
-        <div class="align">
-            <div class="two-column card" id="margin">
-                <section class="result-text">
-                    <h2>
-                        Can we predict margin?
-                    </h2>
-                    <p>
-                        In any election, an informative indicator of the degree of competition and the extent of consensus is the victory margin.
-                        A vanishing margin signifies tight competition and a divided electorate, whereas large margins indicate a decisive mandate 
-                        and overwhelming consensus in favor of one candidate.
-                    </p>
-                    <p>Now one of the natural questions that arises: Can we predict margins?
-                        It turns out the answer is Yes (well, sort of)! Using the random voting model, RVM in short, 
-                        we can predict the distribution of margins (appropriately scaled), when the turnout data of any election is provided.
-                    </p>
-                </section>
-                <section class="result-fig">
-                    <h2>Scaled Margin Distribution</h2>
-                    <div class="dropdown-wrapper">
-                    <label for="country-selector">Select a Country</label>
-                        <select name="" id="country-selector">
-                            <option value="Australia">Australia</option>
-                            <option value="Bangladesh">Bangladesh</option>
-                            <option value="Canada">Canada</option>
-                            <option value="Chile">Chile</option>
-                            <option value="Denmark">Denmark</option>
-                            <option value="France">France</option>
-                            <option value="Germany">Germany</option>
-                            <option value="Ghana">Ghana</option>
-                            <option value="Hungary">Hungary</option>
-                            <option value="India">India</option>
-                            <option value="Japan">Japan</option>
-                            <option value="kenya">kenya</option>
-                            <option value="Korea">South Korea</option>
-                            <option value="Lithuania">Lithuania</option>
-                            <option value="Malawi">Malawi</option>
-                            <option value="Malaysia">Malaysia</option>
-                            <option value="Myanmar">Myanmar</option>
-                            <option value="New Zealand">New Zealand</option>
-                            <option value="Nigeria">Nigeria</option>
-                            <option value="Pakistan">Pakistan</option>
-                            <option value="Papua New Guinea">Papua New Guinea</option>
-                            <option value="Philippines">Philippines</option>
-                            <option value="Solomon Islands">Solomon Islands</option>
-                            <option value="Taiwan">Taiwan</option>
-                            <option value="Tanzania">Tanzania</option>
-                            <option value="Thailand">Thailand</option>
-                            <option value="Trinidad and Tobago">Trinidad and Tobago</option>
-                            <option value="Uganda">Uganda</option>
-                            <option value="UK">Unite Kingdom</option>
-                            <option value="Ukraine">Ukraine</option>
-                            <option value="United States">United States of America</option>
-                            <option value="Zimbabwe">Zimbabwe</option>
-                        </select>
-                    </div>
-    
-                    <img src="assets/India-margin.jpg" alt="" class="result" id="margin-image">
-                </section>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1 class="hero-title">Election Insights</h1>
+                <p class="hero-subtitle">
+                    Discover scientific patterns in election data through interactive visualizations and research findings.
+                </p>
+            </div>
+        </section>
 
-                </div>
-            
-                <div class="two-column card" id="universality">
-                    <section class="result-text">
-                        <h2>
-                            What is universality?
-                        </h2>
-                        <p>
-                            Imagine uncovering patterns so robust they hold true across the globe, 
-                            regardless of country, culture, or rules. This is the essence of universality — simple, 
-                            universal trend hidden within the chaos of complex systems like elections. 
-                        </p>
-                        <p>
-                            While margin of victory is an indicator of electoral competition, the margin-to-turnout ratio, 
-                            later called as the specific margin, captures the competitiveness of an election irrespective of
-                            the size of the electorate. The distribution of specific margin, when scaled by it's mean, display
-                            a universal trend, regardless of electorate size (from municipal elections to state-level and Parliamentary elections), 
-                            country, region, or the finer details of how the elections are conducted.
-            
-                        </p>
-                    </section>
-                    <section class="result-fig">
-                        <h2>Universal distribution of scaled specific margins</h2>
-                        <img src="assets/universality-website.jpg" alt="" class="result" id="margin-image">
-                    </section>
-                </div>
+        <!-- Insights Grid -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Key Research Findings</h2>
+                <div class="insights-grid">
 
-                <div class="two-column card" id="malpractice">
-                    <section class="result-text">
-                        <h2>
-                            How to detect electoral malpractice?
-                        </h2>
-                        <p>
-                            Voter turnouts drive the margin of victory and the scaled specific margin distributions follow
-                            a robust universal trend. Now by analyzing election data, any significant deviation from this expected pattern 
-                            can serve as a red flag, indicating potential fraud or manipulation. For instance, elections in Ethiopia and Belarus 
-                            exhibited clear deviations from the universal norm, aligning with reports from international media and civil organizations 
-                            about potential electoral malpractices.
-                        </p>
-                    </section>
-                    <section class="result-fig">
-                        <h2>Flagged Elections: Ethiopia and Belarus</h2>
-                        <img src="assets/malpractice-website.jpg" alt="" class="result" id="margin-image">
-                    </section>
-                </div>
-            
-                <div class="two-column card" id="vote">
-                    <section class="result-text">
-                        <h2>
-                            Can we predict vote distributions?
-                        </h2>
-                        <p>
-                            The random voting model can accurately predict the scaled margin distribution from turnout data alone, as well as
-                            the universal trend. This leads to a natural question: Does the voter turnouts encode information about 
-                            other key electoral statistics? And can we leverage RVM to predict those statistics? 
-                        </p>
-                        <p>
-                            Using election data of India spanning several decades and electoral scales, we discover that the scaled distributions of 
-                            votes received by the winner and the runner-up can indeed be predicted with remarkable accuracy using RVM and voter 
-                            turnouts.
-            
-                        </p>
-                    </section>
-                    <section class="result-fig">
-                        <h2>Scaled Vote distribution</h2>
-                        <div class="dropdown-wrapper">
-                        <label for="country-selector">Select from Indian Elections</label>
-                            <select name="" id="indian-election-selector">
-                                <option value="GEPBwinner">Winner: General Elections (PB)</option>
-                                <option value="GEACwinner">Winner: General Elections (AC)</option>
-                                <option value="GEPCwinner">Winner: General Elections (PC)</option>
-                                <option value="AEACwinner">Winner: Assembly Elections (AC)</option>
-                                <option value="GEPBrunnerup">Runner-up: General Elections (PB)</option>
-                                <option value="GEACrunnerup">Runner-up: General Elections (AC)</option>
-                                <option value="GEPCrunnerup">Runner-up: General Elections (PC)</option>
-                                <option value="AEACrunnerup">Runner-up: Assembly Elections (AC)</option>
-                            </select>
+                    <!-- Margin Prediction -->
+                    <div class="insight-card" id="margin">
+                        <div class="card">
+                            <h3>Can we predict margin?</h3>
+                            <p>
+                                In any election, an informative indicator of the degree of competition and the extent of consensus is the victory margin.
+                                A vanishing margin signifies tight competition and a divided electorate, whereas large margins indicate a decisive mandate.
+                            </p>
+                            <p>
+                                Using the random voting model (RVM), we can predict the distribution of margins (appropriately scaled) when the turnout data of any election is provided.
+                            </p>
+
+                            <div style="margin-top: 2rem;">
+                                <label for="country-selector" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Select a Country</label>
+                                <select class="select" name="" id="country-selector">
+                                    <option value="Australia">Australia</option>
+                                    <option value="Bangladesh">Bangladesh</option>
+                                    <option value="Canada">Canada</option>
+                                    <option value="Chile">Chile</option>
+                                    <option value="Denmark">Denmark</option>
+                                    <option value="France">France</option>
+                                    <option value="Germany">Germany</option>
+                                    <option value="Ghana">Ghana</option>
+                                    <option value="Hungary">Hungary</option>
+                                    <option value="India">India</option>
+                                    <option value="Japan">Japan</option>
+                                    <option value="Kenya">Kenya</option>
+                                    <option value="Korea">South Korea</option>
+                                    <option value="Lithuania">Lithuania</option>
+                                    <option value="Malawi">Malawi</option>
+                                    <option value="Malaysia">Malaysia</option>
+                                    <option value="Myanmar">Myanmar</option>
+                                    <option value="New Zealand">New Zealand</option>
+                                    <option value="Nigeria">Nigeria</option>
+                                    <option value="Pakistan">Pakistan</option>
+                                    <option value="Papua New Guinea">Papua New Guinea</option>
+                                    <option value="Philippines">Philippines</option>
+                                    <option value="Solomon Islands">Solomon Islands</option>
+                                    <option value="Taiwan">Taiwan</option>
+                                    <option value="Tanzania">Tanzania</option>
+                                    <option value="Thailand">Thailand</option>
+                                    <option value="Trinidad and Tobago">Trinidad and Tobago</option>
+                                    <option value="Uganda">Uganda</option>
+                                    <option value="UK">United Kingdom</option>
+                                    <option value="Ukraine">Ukraine</option>
+                                    <option value="United States">United States</option>
+                                    <option value="Zimbabwe">Zimbabwe</option>
+                                </select>
+                                <img src="assets/India-margin.jpg" alt="Scaled Margin Distribution" class="result" id="margin-image" style="width: 100%; margin-top: 1rem; border-radius: 0.5rem;">
+                            </div>
                         </div>
-                        <img src="assets/AEACwinner.jpg" alt="" class="result" id="vote-image">
-                    </section>
-                </div>
-        </div>
+                    </div>
 
+                    <!-- Universality -->
+                    <div class="insight-card" id="universality">
+                        <div class="card">
+                            <h3>What is universality?</h3>
+                            <p>
+                                Imagine uncovering patterns so robust they hold true across the globe, regardless of country, culture, or rules.
+                                This is the essence of universality — simple, universal trends hidden within the chaos of complex systems like elections.
+                            </p>
+                            <p>
+                                While margin of victory is an indicator of electoral competition, the margin-to-turnout ratio (specific margin) captures the competitiveness of an election irrespective of electorate size.
+                            </p>
+                            <img src="assets/universality-website.jpg" alt="Universal distribution of scaled specific margins" class="result" style="width: 100%; margin-top: 1.5rem; border-radius: 0.5rem;">
+                        </div>
+                    </div>
+
+                    <!-- Malpractice Detection -->
+                    <div class="insight-card" id="malpractice">
+                        <div class="card">
+                            <h3>How to detect electoral malpractice?</h3>
+                            <p>
+                                Voter turnouts drive the margin of victory and the scaled specific margin distributions follow a robust universal trend.
+                                Any significant deviation from this expected pattern can serve as a red flag, indicating potential fraud or manipulation.
+                            </p>
+                            <p>
+                                For instance, elections in Ethiopia and Belarus exhibited clear deviations from the universal norm, aligning with reports from international media and civil organizations about potential electoral malpractices.
+                            </p>
+                            <img src="assets/malpractice-website.jpg" alt="Flagged Elections: Ethiopia and Belarus" class="result" style="width: 100%; margin-top: 1.5rem; border-radius: 0.5rem;">
+                        </div>
+                    </div>
+
+                    <!-- Vote Prediction -->
+                    <div class="insight-card" id="vote">
+                        <div class="card">
+                            <h3>Can we predict vote distributions?</h3>
+                            <p>
+                                The random voting model accurately predicts the scaled margin distribution from turnout data alone. This leads to a question:
+                                Does voter turnout encode information about other key electoral statistics?
+                            </p>
+                            <p>
+                                Using election data from India spanning several decades and electoral scales, we discover that the scaled distributions of votes received by winners and runners-up can indeed be predicted with remarkable accuracy using RVM and voter turnouts.
+                            </p>
+
+                            <div style="margin-top: 2rem;">
+                                <label for="indian-election-selector" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Select from Indian Elections</label>
+                                <select class="select" name="" id="indian-election-selector">
+                                    <option value="GEPBwinner">Winner: General Elections (PB)</option>
+                                    <option value="GEACwinner">Winner: General Elections (AC)</option>
+                                    <option value="GEPCwinner">Winner: General Elections (PC)</option>
+                                    <option value="AEACwinner">Winner: Assembly Elections (AC)</option>
+                                    <option value="GEPBrunnerup">Runner-up: General Elections (PB)</option>
+                                    <option value="GEACrunnerup">Runner-up: General Elections (AC)</option>
+                                    <option value="GEPCrunnerup">Runner-up: General Elections (PC)</option>
+                                    <option value="AEACrunnerup">Runner-up: Assembly Elections (AC)</option>
+                                </select>
+                                <img src="assets/AEACwinner.jpg" alt="Scaled Vote distribution" class="result" id="vote-image" style="width: 100%; margin-top: 1rem; border-radius: 0.5rem;">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
     </main>
 
-    <footer>
-        <div class="footer-group">
-            <div class="footer-title">
-                Site Map
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div>
+                <h4 class="footer-title">Site Map</h4>
+                <div class="footer-links site-map-links">
+                        <a class="footer-link" href="index.html">Home</a>
+                        <a class="footer-link" href="insights.html">Insights</a>
+                        <a class="footer-link" href="publications.html">Publications</a>
+                        <a class="footer-link" href="learnmore.html">Learn more</a>
+                        <a class="footer-link" href="team.html">Team</a>
+                        <a class="footer-link" href="media.html">Media</a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="footer-title">Contact</h4>
+                    <div class="footer-links">
+                        <a class="footer-link" href="https://sites.iiserpune.ac.in/~santh">M. S. Santhanam</a>
+                        <a class="footer-link" href="mailto:santh@iiserpune.ac.in">santh@iiserpune.ac.in</a>
+                        <a class="footer-link" href="https://www.iiserpune.ac.in">IISER Pune, India</a>
+                    </div>
+                </div>
             </div>
-            <div class="footer-site-map">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="insights.html">Insights</a></li>
-                <li><a href="publications.html">Publications</a></li>
-            </ul>
-            <ul>
-                <li><a href="learnmore.html">Learn more</a></li>
-                <li><a href="team.html">Team</a></li>
-                <li><a href="media.html">Media</a></li>
-            </ul>
-        </div>
-        </div>
-        <div class="footer-group">
-            <div class="footer-title">
-                Contact
-            </div>
-            <ul>
-                <li><a href="https://sites.iiserpune.ac.in/~santh">M. S. Santhanam</a></li>
-                <li><a href="mailto:santh@iiserpune.ac.in"> s&#97;nth&#64;iiserpune&#46;ac.in</a></li>
-                <li><a href="https://www.iiserpune.ac.in">IISER Pune, India</a></li>
-            </ul>
-        </div>       
-    </footer>
+        </footer>
 
-    
+    <script>
+        // Mobile menu toggle
+        document.getElementById('hamburger-menu').addEventListener('click', function() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        });
+    </script>
 </body>
 </html>
-
-
