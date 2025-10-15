@@ -317,11 +317,12 @@ a:hover {
 }
 
 .cta-button {
-    display: flex;
+    display: block;
     margin: var(--space-4) auto 0;
     max-width: 15rem;
     align-items: center;
     justify-content: center;
+    gap: var(--space-3);
     background: var(--clr-accent-primary);
     color: white;
     padding : var(--space-4);
@@ -336,6 +337,11 @@ a:hover {
     background: var(--clr-accent-dark);
     transform: translateY(-2px);
     box-shadow: var(--shadow-xl);
+}
+
+.cta-button:hover span {
+    transform: scaleX(1.5);
+    margin-left: var(--space-2);
 }
 
 /* Cards */
