@@ -1,4 +1,4 @@
-# [Election Insights](electioninsights.in)
+# [Election Insights](https://electioninsights.in)
 
 A modern, responsive web platform for election science research and data analysis from the Santhanam Lab at IISER Pune.
 
