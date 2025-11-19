@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Election Insights - Santhanam Lab at IISER Pune</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="app.js"></script>
     <link rel="icon" type="image/png" href="assets/logo.png">
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"></script>
 </head>
+
 <body>
     <!-- Header -->
     <header class="header">
@@ -21,7 +25,8 @@
                     <span class="election">Election</span>
                     <span class="logo-accent">insights</span>
                 </a>
-                <ul class="nav-links">
+                <div class="nav-overlay" id="nav-overlay"></div>
+                <ul class="nav-links" id="nav-links">
                     <li><a class="nav-link" href="index.html">Home</a></li>
                     <li><a class="nav-link active" href="insights.html">Insights</a></li>
                     <li><a class="nav-link" href="blogs.html">Blogs</a></li>
@@ -30,7 +35,7 @@
                     <li><a class="nav-link" href="team.html">Team</a></li>
                     <li><a class="nav-link" href="media.html">Media</a></li>
                 </ul>
-                <button class="mobile-menu-btn" id="hamburger-menu">
+                <button class="mobile-menu-btn" id="hamburger-menu" aria-label="Toggle navigation menu">
                     <span>☰</span>
                 </button>
             </nav>
@@ -44,7 +49,8 @@
             <div class="container">
                 <h1 class="hero-title">Election Insights</h1>
                 <p class="hero-subtitle">
-                    Discover scientific patterns in election data through interactive visualizations and research findings.
+                    Discover scientific patterns in election data through interactive visualizations and research
+                    findings.
                 </p>
             </div>
         </section>
@@ -53,22 +59,27 @@
         <section class="section">
             <div class="container">
                 <h2 class="section-title">Key Research Findings</h2>
-                <div class="insights-grid">
+                <div class="insights-grid-container">
 
                     <!-- Margin Prediction -->
                     <div class="insight-card" id="margin">
                         <div class="card">
                             <h3>Can we predict margin?</h3>
                             <p>
-                                In any election, an informative indicator of the degree of competition and the extent of consensus is the victory margin.
-                                A vanishing margin signifies tight competition and a divided electorate, whereas large margins indicate a decisive mandate.
+                                In any election, an informative indicator of the degree of competition and the extent of
+                                consensus is the victory margin.
+                                A vanishing margin signifies tight competition and a divided electorate, whereas large
+                                margins indicate a decisive mandate.
                             </p>
                             <p>
-                                Using the random voting model (RVM), we can predict the distribution of margins (appropriately scaled) when the turnout data of any election is provided.
+                                Using the random voting model (RVM), we can predict the distribution of margins
+                                (appropriately scaled) when the turnout data of any election is provided.
                             </p>
 
-                            <div style="margin-top: 2rem;">
-                                <label for="country-selector" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Select a Country</label>
+                            <div class="mt-4">
+                                <label for="country-selector"
+                                    style="display: block; margin-bottom: 0.5rem; font-weight: 500; color: var(--clr-text-heading);">Select
+                                    a Country</label>
                                 <select class="select" name="" id="country-selector">
                                     <option value="Australia">Australia</option>
                                     <option value="Bangladesh">Bangladesh</option>
@@ -103,7 +114,10 @@
                                     <option value="United States">United States</option>
                                     <option value="Zimbabwe">Zimbabwe</option>
                                 </select>
-                                <img src="assets/India-margin.jpg" alt="Scaled Margin Distribution" class="result" id="margin-image" style="width: 100%; margin-top: 1rem; border-radius: 0.5rem;">
+                                <div class="mt-4">
+                                    <img src="assets/India-margin.jpg" alt="Scaled Margin Distribution"
+                                        class="result-img" id="margin-image">
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -113,13 +127,20 @@
                         <div class="card">
                             <h3>What is universality?</h3>
                             <p>
-                                Imagine uncovering patterns so robust they hold true across the globe, regardless of country, culture, or rules.
-                                This is the essence of universality — simple, universal trends hidden within the chaos of complex systems like elections.
+                                Imagine uncovering patterns so robust they hold true across the globe, regardless of
+                                country, culture, or rules.
+                                This is the essence of universality — simple, universal trends hidden within the chaos
+                                of complex systems like elections.
                             </p>
                             <p>
-                                While margin of victory is an indicator of electoral competition, the margin-to-turnout ratio (specific margin) captures the competitiveness of an election irrespective of electorate size.
+                                While margin of victory is an indicator of electoral competition, the margin-to-turnout
+                                ratio (specific margin) captures the competitiveness of an election irrespective of
+                                electorate size.
                             </p>
-                            <img src="assets/universality-website.jpg" alt="Universal distribution of scaled specific margins" class="result" style="width: 100%; margin-top: 1.5rem; border-radius: 0.5rem;">
+                            <div class="mt-4">
+                                <img src="assets/universality-website.jpg"
+                                    alt="Universal distribution of scaled specific margins" class="result-img">
+                            </div>
                         </div>
                     </div>
 
@@ -128,13 +149,20 @@
                         <div class="card">
                             <h3>How to detect electoral malpractice?</h3>
                             <p>
-                                Voter turnouts drive the margin of victory and the scaled specific margin distributions follow a robust universal trend.
-                                Any significant deviation from this expected pattern can serve as a red flag, indicating potential fraud or manipulation.
+                                Voter turnouts drive the margin of victory and the scaled specific margin distributions
+                                follow a robust universal trend.
+                                Any significant deviation from this expected pattern can serve as a red flag, indicating
+                                potential fraud or manipulation.
                             </p>
                             <p>
-                                For instance, elections in Ethiopia and Belarus exhibited clear deviations from the universal norm, aligning with reports from international media and civil organizations about potential electoral malpractices.
+                                For instance, elections in Ethiopia and Belarus exhibited clear deviations from the
+                                universal norm, aligning with reports from international media and civil organizations
+                                about potential electoral malpractices.
                             </p>
-                            <img src="assets/malpractice-website.jpg" alt="Flagged Elections: Ethiopia and Belarus" class="result" style="width: 100%; margin-top: 1.5rem; border-radius: 0.5rem;">
+                            <div class="mt-4">
+                                <img src="assets/malpractice-website.jpg" alt="Flagged Elections: Ethiopia and Belarus"
+                                    class="result-img">
+                            </div>
                         </div>
                     </div>
 
@@ -143,15 +171,20 @@
                         <div class="card">
                             <h3>Can we predict vote distributions?</h3>
                             <p>
-                                The random voting model accurately predicts the scaled margin distribution from turnout data alone. This leads to a question:
+                                The random voting model accurately predicts the scaled margin distribution from turnout
+                                data alone. This leads to a question:
                                 Does voter turnout encode information about other key electoral statistics?
                             </p>
                             <p>
-                                Using election data from India spanning several decades and electoral scales, we discover that the scaled distributions of votes received by winners and runners-up can indeed be predicted with remarkable accuracy using RVM and voter turnouts.
+                                Using election data from India spanning several decades and electoral scales, we
+                                discover that the scaled distributions of votes received by winners and runners-up can
+                                indeed be predicted with remarkable accuracy using RVM and voter turnouts.
                             </p>
 
-                            <div style="margin-top: 2rem;">
-                                <label for="indian-election-selector" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Select from Indian Elections</label>
+                            <div class="mt-4">
+                                <label for="indian-election-selector"
+                                    style="display: block; margin-bottom: 0.5rem; font-weight: 500; color: var(--clr-text-heading);">Select
+                                    from Indian Elections</label>
                                 <select class="select" name="" id="indian-election-selector">
                                     <option value="GEPBwinner">Winner: General Elections (PB)</option>
                                     <option value="GEACwinner">Winner: General Elections (AC)</option>
@@ -162,7 +195,10 @@
                                     <option value="GEPCrunnerup">Runner-up: General Elections (PC)</option>
                                     <option value="AEACrunnerup">Runner-up: Assembly Elections (AC)</option>
                                 </select>
-                                <img src="assets/AEACwinner.jpg" alt="Scaled Vote distribution" class="result" id="vote-image" style="width: 100%; margin-top: 1rem; border-radius: 0.5rem;">
+                                <div class="mt-4">
+                                    <img src="assets/AEACwinner.jpg" alt="Scaled Vote distribution" class="result-img"
+                                        id="vote-image">
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -174,10 +210,11 @@
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="footer-content">
-            <div>
-                <h4 class="footer-title">Site Map</h4>
-                <div class="footer-links site-map-links">
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <h4 class="footer-title">Site Map</h4>
+                    <div class="footer-links">
                         <a class="footer-link" href="index.html">Home</a>
                         <a class="footer-link" href="insights.html">Insights</a>
                         <a class="footer-link" href="blogs.html">Blogs</a>
@@ -196,66 +233,41 @@
                     </div>
                 </div>
             </div>
-        </footer>
+        </div>
+    </footer>
 
     <script>
         // Mobile menu toggle with animation
-        document.getElementById('hamburger-menu').addEventListener('click', function() {
-            const navLinks = document.querySelector('.nav-links');
+        const hamburger = document.getElementById('hamburger-menu');
+        const navLinks = document.getElementById('nav-links');
+        const overlay = document.getElementById('nav-overlay');
+
+        function toggleMenu() {
             const isOpen = navLinks.classList.contains('mobile-open');
 
             if (isOpen) {
-                closeMobileNav();
+                navLinks.classList.remove('mobile-open');
+                overlay.classList.remove('active');
+                hamburger.textContent = '☰';
             } else {
-                openMobileNav();
+                navLinks.classList.add('mobile-open');
+                overlay.classList.add('active');
+                hamburger.textContent = '✕';
             }
-        });
-
-        function openMobileNav() {
-            const navLinks = document.querySelector('.nav-links');
-            navLinks.classList.add('mobile-open');
-            
-            // Add close button if it doesn't exist
-            if (!navLinks.querySelector('.mobile-nav-close')) {
-                const closeBtn = document.createElement('button');
-                closeBtn.className = 'mobile-nav-close';
-                closeBtn.innerHTML = '×';
-                closeBtn.setAttribute('aria-label', 'Close navigation menu');
-                closeBtn.addEventListener('click', closeMobileNav);
-                navLinks.appendChild(closeBtn);
-            }
-            
-            // Add active class after a brief delay for smooth animation
-            setTimeout(() => {
-                navLinks.classList.add('active');
-            }, 10);
-            
-            document.getElementById('hamburger-menu').classList.add('active');
-            document.getElementById('hamburger-menu').textContent = '✕';
         }
 
-        function closeMobileNav() {
-            const navLinks = document.querySelector('.nav-links');
-            navLinks.classList.remove('mobile-open', 'active');
-            
-            // Remove close button
-            const closeBtn = navLinks.querySelector('.mobile-nav-close');
-            if (closeBtn) {
-                closeBtn.remove();
-            }
-            
-            document.getElementById('hamburger-menu').classList.remove('active');
-            document.getElementById('hamburger-menu').textContent = '☰';
-        }
+        hamburger.addEventListener('click', toggleMenu);
+        overlay.addEventListener('click', toggleMenu);
 
         // Close mobile menu when clicking a link
         document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', function() {
+            link.addEventListener('click', function () {
                 if (window.innerWidth <= 768) {
-                    closeMobileNav();
+                    toggleMenu();
                 }
             });
         });
     </script>
 </body>
+
 </html>

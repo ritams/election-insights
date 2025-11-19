@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Election Insights - Santhanam Lab at IISER Pune</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="app.js"></script>
     <link rel="icon" type="image/png" href="assets/logo.png">
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"></script>
 </head>
+
 <body>
     <!-- Header -->
     <header class="header">
@@ -21,7 +25,8 @@
                     <span class="election">Election</span>
                     <span class="logo-accent">insights</span>
                 </a>
-                <ul class="nav-links">
+                <div class="nav-overlay" id="nav-overlay"></div>
+                <ul class="nav-links" id="nav-links">
                     <li><a class="nav-link active" href="index.html">Home</a></li>
                     <li><a class="nav-link" href="insights.html">Insights</a></li>
                     <li><a class="nav-link" href="blogs.html">Blogs</a></li>
@@ -30,7 +35,7 @@
                     <li><a class="nav-link" href="team.html">Team</a></li>
                     <li><a class="nav-link" href="media.html">Media</a></li>
                 </ul>
-                <button class="mobile-menu-btn" id="hamburger-menu">
+                <button class="mobile-menu-btn" id="hamburger-menu" aria-label="Toggle navigation menu">
                     <span>☰</span>
                 </button>
             </nav>
@@ -44,14 +49,14 @@
             <div class="container">
                 <h1 class="hero-title">Election Insights</h1>
                 <p class="hero-subtitle">
-                    Uncovering universal patterns, safeguarding Democracy.
+                    Uncovering universal patterns, safeguarding Democracy through scientific analysis.
                 </p>
                 <div class="button-group">
-                    <a href="insights.html" class="cta-button">
+                    <a href="insights.html" class="btn btn-primary">
                         Explore Insights
                         <span>→</span>
                     </a>
-                    <a href="blogs.html" class="cta-button outline-button secondary">
+                    <a href="blogs.html" class="btn btn-outline">
                         Read Our Blogs
                         <span>→</span>
                     </a>
@@ -63,97 +68,98 @@
         <section class="section">
             <div class="container">
                 <h2 class="section-title">Recent Blogs</h2>
-                <div id="recent-blogs" class="grid" style="gap: var(--space-8);">
+                <div id="recent-blogs" class="grid grid-2">
                     <!-- Recent blogs will be loaded here dynamically -->
                 </div>
             </div>
         </section>
 
         <!-- Mission Section -->
-        <section class="section">
+        <section class="section" style="background: var(--clr-slate-100);">
             <div class="container">
-                <div class="grid">
+                <div class="grid grid-2">
                     <div>
                         <h2>Our Mission</h2>
                         <p>
-                            Elections are the cornerstone of democratic societies, reflecting the collective will of the citizens.
-                            They determine governance and policy directions, making them crucial for societal progress and stability.
+                            Elections are the cornerstone of democratic societies, reflecting the collective will of the
+                            citizens.
+                            They determine governance and policy directions, making them crucial for societal progress
+                            and stability.
                         </p>
                         <p>
-                            Scientific studies of elections are essential to understand underlying patterns and ensure fairness.
-                            Our mission is to uncover universal trends in election data and develop models to detect and prevent electoral malpractices,
+                            Scientific studies of elections are essential to understand underlying patterns and ensure
+                            fairness.
+                            Our mission is to uncover universal trends in election data and develop models to detect and
+                            prevent electoral malpractices,
                             thereby safeguarding the integrity of democratic processes worldwide.
                         </p>
                     </div>
                     <div class="card">
                         <h3>What do you think?</h3>
-                        <ul style="list-style: none; padding: 0;">
-                            <li style="margin-bottom: 1rem;">
-                                <a href="insights.html#margin" style="display: block; padding: 1rem; background: var(--clr-bg-accent); border-radius: 0.5rem; transition: all 0.2s ease;">
-                                    Can we predict margin?
-                                </a>
-                            </li>
-                            <li style="margin-bottom: 1rem;">
-                                <a href="insights.html#universality" style="display: block; padding: 1rem; background: var(--clr-bg-accent); border-radius: 0.5rem; transition: all 0.2s ease;">
-                                    What is universality?
-                                </a>
-                            </li>
-                            <li style="margin-bottom: 1rem;">
-                                <a href="insights.html#malpractice" style="display: block; padding: 1rem; background: var(--clr-bg-accent); border-radius: 0.5rem; transition: all 0.2s ease;">
-                                    How to detect electoral malpractices?
-                                </a>
-                            </li>
-                            <li style="margin-bottom: 1rem;">
-                                <a href="insights.html#vote" style="display: block; padding: 1rem; background: var(--clr-bg-accent); border-radius: 0.5rem; transition: all 0.2s ease;">
-                                    Can we predict vote distributions?
-                                </a>
-                            </li>
-                        </ul>
-                        <p>Find the answers in the <a href="insights.html">Insights</a> page.</p>
+                        <div class="grid" style="gap: var(--space-3);">
+                            <a href="insights.html#margin" class="btn btn-outline w-full"
+                                style="justify-content: flex-start;">
+                                Can we predict margin?
+                            </a>
+                            <a href="insights.html#universality" class="btn btn-outline w-full"
+                                style="justify-content: flex-start;">
+                                What is universality?
+                            </a>
+                            <a href="insights.html#malpractice" class="btn btn-outline w-full"
+                                style="justify-content: flex-start;">
+                                How to detect electoral malpractices?
+                            </a>
+                            <a href="insights.html#vote" class="btn btn-outline w-full"
+                                style="justify-content: flex-start;">
+                                Can we predict vote distributions?
+                            </a>
+                        </div>
+                        <p class="mt-4 text-center">Find the answers in the <a href="insights.html">Insights</a> page.
+                        </p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Support Section -->
-        <section class="section" style="background: var(--clr-bg-secondary);">
+        <section class="section" style="padding-bottom: 0;">
             <div class="container">
                 <h2 class="section-title">Supported by</h2>
-                <div class="carousel">
-                    <div class="carousel-track">
-                        <div class="carousel-item">
-                            <div class="support-logo">IISER Pune, India</div>
-                            <p class="support-text">Institutional support and research facilities.</p>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="support-logo">SERB MATRICS Grant</div>
-                            <p class="support-text">To M. S. Santhanam for research funding.</p>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="support-logo">PARAM Brahma</div>
-                            <p class="support-text">Supercomputing facility at IISER Pune.</p>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="support-logo">Prime Minister's Research Fellowship</div>
-                            <p class="support-text">To Aanjaneya Kumar and Ritam Pal.</p>
-                        </div>
-                        <!-- Duplicate for seamless loop -->
-                        <div class="carousel-item">
-                            <div class="support-logo">IISER Pune, India</div>
-                            <p class="support-text">Institutional support and research facilities.</p>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="support-logo">SERB MATRICS Grant</div>
-                            <p class="support-text">To M. S. Santhanam for research funding.</p>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="support-logo">PARAM Brahma</div>
-                            <p class="support-text">Supercomputing facility at IISER Pune.</p>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="support-logo">Prime Minister's Research Fellowship</div>
-                            <p class="support-text">To Aanjaneya Kumar and Ritam Pal.</p>
-                        </div>
+            </div>
+            <div class="carousel-container">
+                <div class="carousel-track">
+                    <div class="carousel-item">
+                        <div class="support-logo">IISER Pune, India</div>
+                        <p class="support-text">Institutional support and research facilities.</p>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="support-logo">SERB MATRICS Grant</div>
+                        <p class="support-text">To M. S. Santhanam for research funding.</p>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="support-logo">PARAM Brahma</div>
+                        <p class="support-text">Supercomputing facility at IISER Pune.</p>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="support-logo">Prime Minister's Research Fellowship</div>
+                        <p class="support-text">To Aanjaneya Kumar and Ritam Pal.</p>
+                    </div>
+                    <!-- Duplicate for seamless loop -->
+                    <div class="carousel-item">
+                        <div class="support-logo">IISER Pune, India</div>
+                        <p class="support-text">Institutional support and research facilities.</p>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="support-logo">SERB MATRICS Grant</div>
+                        <p class="support-text">To M. S. Santhanam for research funding.</p>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="support-logo">PARAM Brahma</div>
+                        <p class="support-text">Supercomputing facility at IISER Pune.</p>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="support-logo">Prime Minister's Research Fellowship</div>
+                        <p class="support-text">To Aanjaneya Kumar and Ritam Pal.</p>
                     </div>
                 </div>
             </div>
@@ -162,10 +168,11 @@
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="footer-content">
+        <div class="container">
+            <div class="footer-content">
                 <div>
                     <h4 class="footer-title">Site Map</h4>
-                    <div class="footer-links site-map-links">
+                    <div class="footer-links">
                         <a class="footer-link" href="index.html">Home</a>
                         <a class="footer-link" href="insights.html">Insights</a>
                         <a class="footer-link" href="blogs.html">Blogs</a>
@@ -184,11 +191,12 @@
                     </div>
                 </div>
             </div>
-        </footer>
+        </div>
+    </footer>
 
     <script>
         // Modern navbar scroll effects
-        window.addEventListener('scroll', function() {
+        window.addEventListener('scroll', function () {
             const header = document.querySelector('.header');
             if (window.scrollY > 50) {
                 header.classList.add('scrolled');
@@ -198,59 +206,32 @@
         });
 
         // Mobile menu toggle with animation
-        document.getElementById('hamburger-menu').addEventListener('click', function() {
-            const navLinks = document.querySelector('.nav-links');
+        const hamburger = document.getElementById('hamburger-menu');
+        const navLinks = document.getElementById('nav-links');
+        const overlay = document.getElementById('nav-overlay');
+
+        function toggleMenu() {
             const isOpen = navLinks.classList.contains('mobile-open');
 
             if (isOpen) {
-                closeMobileNav();
+                navLinks.classList.remove('mobile-open');
+                overlay.classList.remove('active');
+                hamburger.textContent = '☰';
             } else {
-                openMobileNav();
+                navLinks.classList.add('mobile-open');
+                overlay.classList.add('active');
+                hamburger.textContent = '✕';
             }
-        });
-
-        function openMobileNav() {
-            const navLinks = document.querySelector('.nav-links');
-            navLinks.classList.add('mobile-open');
-            
-            // Add close button if it doesn't exist
-            if (!navLinks.querySelector('.mobile-nav-close')) {
-                const closeBtn = document.createElement('button');
-                closeBtn.className = 'mobile-nav-close';
-                closeBtn.innerHTML = '×';
-                closeBtn.setAttribute('aria-label', 'Close navigation menu');
-                closeBtn.addEventListener('click', closeMobileNav);
-                navLinks.appendChild(closeBtn);
-            }
-            
-            // Add active class after a brief delay for smooth animation
-            setTimeout(() => {
-                navLinks.classList.add('active');
-            }, 10);
-            
-            document.getElementById('hamburger-menu').classList.add('active');
-            document.getElementById('hamburger-menu').textContent = '✕';
         }
 
-        function closeMobileNav() {
-            const navLinks = document.querySelector('.nav-links');
-            navLinks.classList.remove('mobile-open', 'active');
-            
-            // Remove close button
-            const closeBtn = navLinks.querySelector('.mobile-nav-close');
-            if (closeBtn) {
-                closeBtn.remove();
-            }
-            
-            document.getElementById('hamburger-menu').classList.remove('active');
-            document.getElementById('hamburger-menu').textContent = '☰';
-        }
+        hamburger.addEventListener('click', toggleMenu);
+        overlay.addEventListener('click', toggleMenu);
 
         // Close mobile menu when clicking a link
         document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', function() {
+            link.addEventListener('click', function () {
                 if (window.innerWidth <= 768) {
-                    closeMobileNav();
+                    toggleMenu();
                 }
             });
         });
@@ -275,7 +256,9 @@
                     card.innerHTML = `
                         <h3>${blog.title}</h3>
                         <p>${blog.excerpt}</p>
-                        <p class="read-more-link"><a href="blogs.html?blog=${encodeURIComponent(blog.file)}" class="subtle-link">Read more...</a></p>
+                        <div class="mt-4">
+                            <a href="blogs.html?blog=${encodeURIComponent(blog.file)}" class="btn btn-outline" style="font-size: 0.875rem; padding: 0.5rem 1rem;">Read more →</a>
+                        </div>
                     `;
                     recentBlogsContainer.appendChild(card);
                 });
@@ -288,4 +271,5 @@
         loadRecentBlogs();
     </script>
 </body>
+
 </html>

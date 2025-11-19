@@ -1,16 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Election Insights - Santhanam Lab at IISER Pune</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="app.js"></script>
     <link rel="icon" type="image/png" href="assets/logo.png">
 </head>
+
 <body>
     <!-- Header -->
     <header class="header">
@@ -20,7 +24,8 @@
                     <span class="election">Election</span>
                     <span class="logo-accent">insights</span>
                 </a>
-                <ul class="nav-links">
+                <div class="nav-overlay" id="nav-overlay"></div>
+                <ul class="nav-links" id="nav-links">
                     <li><a class="nav-link" href="index.html">Home</a></li>
                     <li><a class="nav-link" href="insights.html">Insights</a></li>
                     <li><a class="nav-link" href="blogs.html">Blogs</a></li>
@@ -29,7 +34,7 @@
                     <li><a class="nav-link active" href="team.html">Team</a></li>
                     <li><a class="nav-link" href="media.html">Media</a></li>
                 </ul>
-                <button class="mobile-menu-btn" id="hamburger-menu">
+                <button class="mobile-menu-btn" id="hamburger-menu" aria-label="Toggle navigation menu">
                     <span>☰</span>
                 </button>
             </nav>
@@ -51,38 +56,64 @@
         <!-- Team Members -->
         <section class="section">
             <div class="container">
-                <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: var(--space-8);">
+                <div class="grid"
+                    style="grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: var(--space-8);">
 
                     <div class="card" style="display: flex; flex-direction: column; text-align: left;">
-                        <img src="assets/aanj.jpg" alt="Aanjaneya Kumar" style="height: 40%; width: 100%; object-fit: cover; object-position: top; border-radius: var(--space-2); border: none;">
+                        <img src="assets/aanj.jpg" alt="Aanjaneya Kumar"
+                            style="height: 40%; width: 100%; object-fit: cover; object-position: top; border-radius: var(--space-2); border: none;">
                         <div style="flex: 1; padding: var(--space-4) var(--space-4) 0 var(--space-4);">
                             <h3>Aanjaneya Kumar</h3>
-                            <p style="color: var(--clr-accent-primary); font-weight: 500; margin-bottom: var(--space-4);">Post Doctoral Fellow</p>
-                            <p style="color: var(--clr-text-tertiary); font-size: var(--fs-sm); margin-bottom: var(--space-4);">Santa Fe Institute and Princeton University, USA</p>
-                            <p>Aanjaneya is interested in the study of stochastic models of complex systems. His research focuses on extremal statistics, social dynamics, cultural evolution, and complex systems.</p>
-                            <a href="http://aanjaneyakumar.com" style="margin-top: var(--space-4); font-size: var(--fs-xs); color: var(--clr-accent-primary); text-decoration: none;">Visit Website <span style="margin-left: var(--space-1); opacity: 0.7;">→</span></a>
+                            <p
+                                style="color: var(--clr-accent-primary); font-weight: 500; margin-bottom: var(--space-4);">
+                                Post Doctoral Fellow</p>
+                            <p
+                                style="color: var(--clr-text-tertiary); font-size: var(--fs-sm); margin-bottom: var(--space-4);">
+                                Santa Fe Institute and Princeton University, USA</p>
+                            <p>Aanjaneya is interested in the study of stochastic models of complex systems. His
+                                research focuses on extremal statistics, social dynamics, cultural evolution, and
+                                complex systems.</p>
+                            <a href="http://aanjaneyakumar.com"
+                                style="margin-top: var(--space-4); font-size: var(--fs-xs); color: var(--clr-accent-primary); text-decoration: none;">Visit
+                                Website <span style="margin-left: var(--space-1); opacity: 0.7;">→</span></a>
                         </div>
                     </div>
 
                     <div class="card" style="display: flex; flex-direction: column; text-align: left;">
-                        <img src="assets/ritam.jpeg" alt="Ritam Pal" style="height: 40%; width: 100%; object-fit: cover; object-position: top; border-radius: var(--space-2); border: none;">
+                        <img src="assets/ritam.jpeg" alt="Ritam Pal"
+                            style="height: 40%; width: 100%; object-fit: cover; object-position: top; border-radius: var(--space-2); border: none;">
                         <div style="flex: 1; padding: var(--space-4) var(--space-4) 0 var(--space-4);">
                             <h3>Ritam Pal</h3>
-                            <p style="color: var(--clr-accent-primary); font-weight: 500; margin-bottom: var(--space-4);">PhD Student</p>
-                            <p style="color: var(--clr-text-tertiary); font-size: var(--fs-sm); margin-bottom: var(--space-4);">IISER Pune, India</p>
-                            <p>Ritam studies complex systems at the intersection of physics and social sciences, focusing on public opinion dynamics and election modeling.</p>
-                            <a href="http://ritampal.com" style="margin-top: var(--space-4); font-size: var(--fs-xs); color: var(--clr-accent-primary); text-decoration: none;">Visit Website <span style="margin-left: var(--space-1); opacity: 0.7;">→</span></a>
+                            <p
+                                style="color: var(--clr-accent-primary); font-weight: 500; margin-bottom: var(--space-4);">
+                                PhD Student</p>
+                            <p
+                                style="color: var(--clr-text-tertiary); font-size: var(--fs-sm); margin-bottom: var(--space-4);">
+                                IISER Pune, India</p>
+                            <p>Ritam studies complex systems at the intersection of physics and social sciences,
+                                focusing on public opinion dynamics and election modeling.</p>
+                            <a href="http://ritampal.com"
+                                style="margin-top: var(--space-4); font-size: var(--fs-xs); color: var(--clr-accent-primary); text-decoration: none;">Visit
+                                Website <span style="margin-left: var(--space-1); opacity: 0.7;">→</span></a>
                         </div>
                     </div>
 
                     <div class="card" style="display: flex; flex-direction: column; text-align: left;">
-                        <img src="assets/santh.jpg" alt="M. S. Santhanam" style="height: 40%; width: 100%; object-fit: cover; object-position: top; border-radius: var(--space-2); border: none;">
+                        <img src="assets/santh.jpg" alt="M. S. Santhanam"
+                            style="height: 40%; width: 100%; object-fit: cover; object-position: top; border-radius: var(--space-2); border: none;">
                         <div style="flex: 1; padding: var(--space-4) var(--space-4) 0 var(--space-4);">
                             <h3>M. S. Santhanam</h3>
-                            <p style="color: var(--clr-accent-primary); font-weight: 500; margin-bottom: var(--space-4);">Professor</p>
-                            <p style="color: var(--clr-text-tertiary); font-size: var(--fs-sm); margin-bottom: var(--space-4);">IISER Pune, India</p>
-                            <p>Santhanam is a faculty of physics at IISER Pune. His research covers chaos, quantum systems, statistical physics, and complex systems including elections.</p>
-                            <a href="http://sites.iiserpune.ac.in/~santh/" style="margin-top: var(--space-4); font-size: var(--fs-xs); color: var(--clr-accent-primary); text-decoration: none;">Visit Website <span style="margin-left: var(--space-1); opacity: 0.7;">→</span></a>
+                            <p
+                                style="color: var(--clr-accent-primary); font-weight: 500; margin-bottom: var(--space-4);">
+                                Professor</p>
+                            <p
+                                style="color: var(--clr-text-tertiary); font-size: var(--fs-sm); margin-bottom: var(--space-4);">
+                                IISER Pune, India</p>
+                            <p>Santhanam is a faculty of physics at IISER Pune. His research covers chaos, quantum
+                                systems, statistical physics, and complex systems including elections.</p>
+                            <a href="http://sites.iiserpune.ac.in/~santh/"
+                                style="margin-top: var(--space-4); font-size: var(--fs-xs); color: var(--clr-accent-primary); text-decoration: none;">Visit
+                                Website <span style="margin-left: var(--space-1); opacity: 0.7;">→</span></a>
                         </div>
                     </div>
 
@@ -93,10 +124,11 @@
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="footer-content">
-            <div>
-                <h4 class="footer-title">Site Map</h4>
-                <div class="footer-links site-map-links">
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <h4 class="footer-title">Site Map</h4>
+                    <div class="footer-links">
                         <a class="footer-link" href="index.html">Home</a>
                         <a class="footer-link" href="insights.html">Insights</a>
                         <a class="footer-link" href="blogs.html">Blogs</a>
@@ -115,11 +147,12 @@
                     </div>
                 </div>
             </div>
-        </footer>
+        </div>
+    </footer>
 
     <script>
         // Modern navbar scroll effects
-        window.addEventListener('scroll', function() {
+        window.addEventListener('scroll', function () {
             const header = document.querySelector('.header');
             if (window.scrollY > 50) {
                 header.classList.add('scrolled');
@@ -129,62 +162,36 @@
         });
 
         // Mobile menu toggle with animation
-        document.getElementById('hamburger-menu').addEventListener('click', function() {
-            const navLinks = document.querySelector('.nav-links');
+        const hamburger = document.getElementById('hamburger-menu');
+        const navLinks = document.getElementById('nav-links');
+        const overlay = document.getElementById('nav-overlay');
+
+        function toggleMenu() {
             const isOpen = navLinks.classList.contains('mobile-open');
 
             if (isOpen) {
-                closeMobileNav();
+                navLinks.classList.remove('mobile-open');
+                overlay.classList.remove('active');
+                hamburger.textContent = '☰';
             } else {
-                openMobileNav();
+                navLinks.classList.add('mobile-open');
+                overlay.classList.add('active');
+                hamburger.textContent = '✕';
             }
-        });
-
-        function openMobileNav() {
-            const navLinks = document.querySelector('.nav-links');
-            navLinks.classList.add('mobile-open');
-            
-            // Add close button if it doesn't exist
-            if (!navLinks.querySelector('.mobile-nav-close')) {
-                const closeBtn = document.createElement('button');
-                closeBtn.className = 'mobile-nav-close';
-                closeBtn.innerHTML = '×';
-                closeBtn.setAttribute('aria-label', 'Close navigation menu');
-                closeBtn.addEventListener('click', closeMobileNav);
-                navLinks.appendChild(closeBtn);
-            }
-            
-            // Add active class after a brief delay for smooth animation
-            setTimeout(() => {
-                navLinks.classList.add('active');
-            }, 10);
-            
-            document.getElementById('hamburger-menu').classList.add('active');
-            document.getElementById('hamburger-menu').textContent = '✕';
         }
 
-        function closeMobileNav() {
-            const navLinks = document.querySelector('.nav-links');
-            navLinks.classList.remove('mobile-open', 'active');
-            
-            // Remove close button
-            const closeBtn = navLinks.querySelector('.mobile-nav-close');
-            if (closeBtn) {
-                closeBtn.remove();
-            }
-            
-            document.getElementById('hamburger-menu').classList.remove('active');
-            document.getElementById('hamburger-menu').textContent = '☰';
-        }
+        hamburger.addEventListener('click', toggleMenu);
+        overlay.addEventListener('click', toggleMenu);
 
         // Close mobile menu when clicking a link
         document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', function() {
+            link.addEventListener('click', function () {
                 if (window.innerWidth <= 768) {
-                    closeMobileNav();
+                    toggleMenu();
                 }
             });
         });
     </script>
 </body>
+
 </html>

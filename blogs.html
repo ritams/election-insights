@@ -1,18 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Election Insights - Santhanam Lab at IISER Pune</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="app.js"></script>
     <link rel="icon" type="image/png" href="assets/logo.png">
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
+
 <body>
     <!-- Header -->
     <header class="header">
@@ -22,7 +26,8 @@
                     <span class="election">Election</span>
                     <span class="logo-accent">insights</span>
                 </a>
-                <ul class="nav-links">
+                <div class="nav-overlay" id="nav-overlay"></div>
+                <ul class="nav-links" id="nav-links">
                     <li><a class="nav-link" href="index.html">Home</a></li>
                     <li><a class="nav-link" href="insights.html">Insights</a></li>
                     <li><a class="nav-link active" href="blogs.html">Blogs</a></li>
@@ -31,7 +36,7 @@
                     <li><a class="nav-link" href="team.html">Team</a></li>
                     <li><a class="nav-link" href="media.html">Media</a></li>
                 </ul>
-                <button class="mobile-menu-btn" id="hamburger-menu">
+                <button class="mobile-menu-btn" id="hamburger-menu" aria-label="Toggle navigation menu">
                     <span>☰</span>
                 </button>
             </nav>
@@ -47,7 +52,8 @@
                 <p class="hero-subtitle">
                     Explore our latest blog posts and research insights.
                 </p>
-                <div class="search-container" style="margin-top: var(--space-8);">
+                <div class="search-container"
+                    style="margin-top: var(--space-8); display: flex; justify-content: center;">
                     <input type="text" id="blog-search" placeholder="Search blogs..." class="search-input">
                 </div>
             </div>
@@ -56,7 +62,7 @@
         <!-- Blogs -->
         <section class="section">
             <div class="container">
-                <div id="blogs-container" style="display: grid; gap: var(--space-8);">
+                <div id="blogs-container" class="grid">
                     <!-- Blogs will be loaded here dynamically -->
                 </div>
             </div>
@@ -65,25 +71,27 @@
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="footer-content">
-            <div>
-                <h4 class="footer-title">Site Map</h4>
-                <div class="footer-links site-map-links">
-                    <a class="footer-link" href="index.html">Home</a>
-                    <a class="footer-link" href="insights.html">Insights</a>
-                    <a class="footer-link" href="blogs.html">Blogs</a>
-                    <a class="footer-link" href="publications.html">Publications</a>
-                    <a class="footer-link" href="learnmore.html">Learn more</a>
-                    <a class="footer-link" href="team.html">Team</a>
-                    <a class="footer-link" href="media.html">Media</a>
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <h4 class="footer-title">Site Map</h4>
+                    <div class="footer-links">
+                        <a class="footer-link" href="index.html">Home</a>
+                        <a class="footer-link" href="insights.html">Insights</a>
+                        <a class="footer-link" href="blogs.html">Blogs</a>
+                        <a class="footer-link" href="publications.html">Publications</a>
+                        <a class="footer-link" href="learnmore.html">Learn more</a>
+                        <a class="footer-link" href="team.html">Team</a>
+                        <a class="footer-link" href="media.html">Media</a>
+                    </div>
                 </div>
-            </div>
-            <div>
-                <h4 class="footer-title">Contact</h4>
-                <div class="footer-links">
-                    <a class="footer-link" href="https://sites.iiserpune.ac.in/~santh">M. S. Santhanam</a>
-                    <a class="footer-link" href="mailto:santh@iiserpune.ac.in">santh@iiserpune.ac.in</a>
-                    <a class="footer-link" href="https://www.iiserpune.ac.in">IISER Pune, India</a>
+                <div>
+                    <h4 class="footer-title">Contact</h4>
+                    <div class="footer-links">
+                        <a class="footer-link" href="https://sites.iiserpune.ac.in/~santh">M. S. Santhanam</a>
+                        <a class="footer-link" href="mailto:santh@iiserpune.ac.in">santh@iiserpune.ac.in</a>
+                        <a class="footer-link" href="https://www.iiserpune.ac.in">IISER Pune, India</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -91,7 +99,7 @@
 
     <script>
         // Modern navbar scroll effects
-        window.addEventListener('scroll', function() {
+        window.addEventListener('scroll', function () {
             const header = document.querySelector('.header');
             if (window.scrollY > 50) {
                 header.classList.add('scrolled');
@@ -101,59 +109,32 @@
         });
 
         // Mobile menu toggle with animation
-        document.getElementById('hamburger-menu').addEventListener('click', function() {
-            const navLinks = document.querySelector('.nav-links');
+        const hamburger = document.getElementById('hamburger-menu');
+        const navLinks = document.getElementById('nav-links');
+        const overlay = document.getElementById('nav-overlay');
+
+        function toggleMenu() {
             const isOpen = navLinks.classList.contains('mobile-open');
 
             if (isOpen) {
-                closeMobileNav();
+                navLinks.classList.remove('mobile-open');
+                overlay.classList.remove('active');
+                hamburger.textContent = '☰';
             } else {
-                openMobileNav();
+                navLinks.classList.add('mobile-open');
+                overlay.classList.add('active');
+                hamburger.textContent = '✕';
             }
-        });
-
-        function openMobileNav() {
-            const navLinks = document.querySelector('.nav-links');
-            navLinks.classList.add('mobile-open');
-            
-            // Add close button if it doesn't exist
-            if (!navLinks.querySelector('.mobile-nav-close')) {
-                const closeBtn = document.createElement('button');
-                closeBtn.className = 'mobile-nav-close';
-                closeBtn.innerHTML = '×';
-                closeBtn.setAttribute('aria-label', 'Close navigation menu');
-                closeBtn.addEventListener('click', closeMobileNav);
-                navLinks.appendChild(closeBtn);
-            }
-            
-            // Add active class after a brief delay for smooth animation
-            setTimeout(() => {
-                navLinks.classList.add('active');
-            }, 10);
-            
-            document.getElementById('hamburger-menu').classList.add('active');
-            document.getElementById('hamburger-menu').textContent = '✕';
         }
 
-        function closeMobileNav() {
-            const navLinks = document.querySelector('.nav-links');
-            navLinks.classList.remove('mobile-open', 'active');
-            
-            // Remove close button
-            const closeBtn = navLinks.querySelector('.mobile-nav-close');
-            if (closeBtn) {
-                closeBtn.remove();
-            }
-            
-            document.getElementById('hamburger-menu').classList.remove('active');
-            document.getElementById('hamburger-menu').textContent = '☰';
-        }
+        hamburger.addEventListener('click', toggleMenu);
+        overlay.addEventListener('click', toggleMenu);
 
         // Close mobile menu when clicking a link
         document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', function() {
+            link.addEventListener('click', function () {
                 if (window.innerWidth <= 768) {
-                    closeMobileNav();
+                    toggleMenu();
                 }
             });
         });
@@ -241,13 +222,14 @@
 
         async function loadBlogExpanded(file) {
             // Show loading state
-            blogsContainer.innerHTML = `
-                <article class="card blog-full-card">
-                    <div style="text-align: center; padding: var(--space-8);">
-                        <p>Loading blog...</p>
-                    </div>
-                </article>
+            const loadingModal = document.createElement('div');
+            loadingModal.className = 'blog-full-card';
+            loadingModal.innerHTML = `
+                <div style="text-align: center; padding: var(--space-8);">
+                    <p>Loading blog...</p>
+                </div>
             `;
+            document.body.appendChild(loadingModal);
 
             try {
                 const response = await fetch(`blogs/${file}`);
@@ -255,37 +237,45 @@
                 let html = marked.parse(md);
                 html = addHeadingIds(html);
 
-                blogsContainer.innerHTML = `
-                    <article class="card blog-full-card">
-                        <button class="close-modal" aria-label="Close blog" onclick="location.href='blogs.html'">×</button>
-                        <div class="prose prose-lg">${html}</div>
-                    </article>
+                loadingModal.innerHTML = `
+                    <button class="close-modal" aria-label="Close blog">×</button>
+                    <div class="prose prose-lg">${html}</div>
                 `;
+
+                // Add close event listener
+                loadingModal.querySelector('.close-modal').addEventListener('click', () => {
+                    loadingModal.remove();
+                    // Remove query param without reloading
+                    const url = new URL(window.location);
+                    url.searchParams.delete('blog');
+                    window.history.pushState({}, '', url);
+                });
+
                 // Re-render MathJax
                 if (window.MathJax) {
                     MathJax.typeset();
                 }
             } catch (error) {
                 console.error('Error loading expanded blog:', file, error);
-                blogsContainer.innerHTML = `
-                    <article class="card blog-full-card">
-                        <div style="text-align: center; padding: var(--space-8);">
-                            <p>Error loading blog. Please try again.</p>
-                        </div>
-                    </article>
+                loadingModal.innerHTML = `
+                    <button class="close-modal" aria-label="Close blog">×</button>
+                    <div style="text-align: center; padding: var(--space-8);">
+                        <p>Error loading blog. Please try again.</p>
+                    </div>
                 `;
+                loadingModal.querySelector('.close-modal').addEventListener('click', () => loadingModal.remove());
             }
         }
 
         // Search functionality
         function handleSearch() {
             const searchTerm = document.getElementById('blog-search').value.toLowerCase();
-            
-            const filteredBlogs = allBlogs.filter(blog => 
+
+            const filteredBlogs = allBlogs.filter(blog =>
                 blog.title.toLowerCase().includes(searchTerm) ||
                 blog.excerpt.toLowerCase().includes(searchTerm)
             );
-            
+
             displayBlogs(filteredBlogs);
         }
 
@@ -296,16 +286,21 @@
         document.getElementById('blog-search').addEventListener('input', handleSearch);
 
         // Handle read more clicks
-        document.addEventListener('click', function(e) {
+        document.addEventListener('click', function (e) {
             if (e.target.classList.contains('subtle-link')) {
                 e.preventDefault();
                 const content = e.target.dataset.content.replace(/\\n/g, '\n');
-                blogsContainer.innerHTML = `
-                    <article class="card blog-full-card">
-                        <button class="close-modal" aria-label="Close blog" onclick="location.reload()">×</button>
-                        <div class="prose prose-lg">${content}</div>
-                    </article>
+
+                const modal = document.createElement('div');
+                modal.className = 'blog-full-card';
+                modal.innerHTML = `
+                    <button class="close-modal" aria-label="Close blog">×</button>
+                    <div class="prose prose-lg">${content}</div>
                 `;
+                document.body.appendChild(modal);
+
+                modal.querySelector('.close-modal').addEventListener('click', () => modal.remove());
+
                 // Re-render MathJax
                 if (window.MathJax) {
                     MathJax.typeset();
@@ -314,4 +309,5 @@
         });
     </script>
 </body>
+
 </html>
