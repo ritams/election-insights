@@ -199,7 +199,7 @@ a:hover {
 }
 
 .grid-2 {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
 }
 
 /* Insights Grid - Max 2 columns always */
@@ -312,8 +312,8 @@ a:hover {
         padding: var(--space-20) var(--space-6) var(--space-8);
         box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
         transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        align-items: flex-end;
-        /* Right align items */
+        align-items: flex-start;
+        /* Left align items */
         z-index: 1005;
     }
 
@@ -323,7 +323,7 @@ a:hover {
 
     .nav-link {
         width: 100%;
-        text-align: right;
+        text-align: left;
         padding: var(--space-3) 0;
         font-size: 1.125rem;
         border-bottom: 1px solid var(--clr-slate-100);
@@ -494,6 +494,7 @@ a:hover {
         padding: var(--space-4) 0;
         border-bottom: 1px solid var(--clr-border);
         border-radius: 0;
+        text-align: left;
     }
 
     .card:hover {
