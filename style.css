@@ -14,6 +14,7 @@
 html {
     scroll-behavior: smooth;
     font-size: 16px;
+    overflow-x: hidden;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -150,11 +151,13 @@ h6 {
 }
 
 h1 {
-    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-size: clamp(2rem, 5vw, 4rem);
+    /* Reduced min size */
 }
 
 h2 {
-    font-size: clamp(2rem, 4vw, 3rem);
+    font-size: clamp(1.75rem, 4vw, 3rem);
+    /* Reduced min size */
 }
 
 h3 {
@@ -292,13 +295,20 @@ a:hover {
     font-weight: var(--fw-semibold);
 }
 
+/* Hide mobile menu header by default */
+.mobile-menu-header {
+    display: none !important;
+    /* Force hide in all views as per request */
+}
+
 /* Mobile Menu - Slide-in Panel */
 .mobile-menu-btn {
     display: none;
     background: transparent;
     border: none;
     color: var(--clr-text-heading);
-    font-size: 2.5rem;
+    font-size: 3rem;
+    /* Increased from 2.5rem */
     cursor: pointer;
     padding: var(--space-2);
     z-index: 1006;
@@ -311,7 +321,8 @@ a:hover {
         flex-direction: column;
         position: fixed;
         top: 0;
-        right: -100%;
+        right: 0;
+        transform: translateX(100%);
         /* Start off-screen */
         width: 100%;
         max-width: none;
@@ -319,32 +330,70 @@ a:hover {
         background: white;
         padding: var(--space-20) var(--space-6) var(--space-8);
         box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
-        transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.3s;
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.3s;
         align-items: flex-end;
-        /* Right align items */
+        /* Changed back to flex-end for right alignment */
+        /* Changed from flex-end */
         z-index: 1005;
         visibility: hidden;
     }
 
     .nav-links.mobile-open {
-        right: 0;
+        transform: translateX(0);
         visibility: visible;
+    }
+
+    /* Mobile Menu Header for Logo */
+    .mobile-menu-header {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        padding: 0 var(--space-4) var(--space-4) var(--space-4);
+        margin-bottom: var(--space-2);
+        border-bottom: 1px solid var(--clr-slate-100);
+    }
+
+    .mobile-menu-header .logo {
+        font-size: 1.25rem;
     }
 
     .nav-link {
         width: 100%;
         text-align: right;
-        padding: var(--space-3) 0;
-        font-size: 1.125rem;
-        border-bottom: 1px solid var(--clr-slate-100);
+        /* Changed to right */
+        padding: var(--space-4) var(--space-2);
+        /* Increased vertical padding */
+        font-size: 1.25rem;
+        /* Slightly larger */
+        border-bottom: none;
+        /* Cleaner look */
         border-radius: 0;
+        position: relative;
     }
 
     .nav-link:hover,
     .nav-link.active {
         background: transparent;
+        /* Remove background box */
         color: var(--clr-primary-600);
-        padding-right: var(--space-2);
+        padding-left: 0;
+        /* Reset padding */
+        padding-right: var(--space-6);
+        /* Add space for indicator */
+    }
+
+    /* Modern Active Indicator */
+    .nav-link.active::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 4px;
+        height: 24px;
+        background: var(--clr-primary-600);
+        border-radius: var(--radius-full);
+        box-shadow: 0 0 10px rgba(139, 92, 246, 0.5);
     }
 
     .mobile-menu-btn {
@@ -628,11 +677,11 @@ a:hover {
 
 /* Carousel */
 .carousel-container {
-    width: 100vw;
+    width: 100%;
     max-width: 100%;
     position: relative;
-    left: 50%;
-    transform: translateX(-50%);
+    /* left: 50%; removed */
+    /* transform: translateX(-50%); removed */
     background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.8) 10%, rgba(255, 255, 255, 0.8) 90%, rgba(255, 255, 255, 0));
     padding: var(--space-8) 0;
     overflow: hidden;
@@ -728,6 +777,9 @@ a:hover {
     max-width: 800px;
     margin: 0 auto;
     padding-top: var(--space-8);
+    overflow-wrap: break-word;
+    /* Prevent horizontal overflow */
+    word-wrap: break-word;
 }
 
 .prose h1 {
