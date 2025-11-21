@@ -128,8 +128,10 @@ body {
     font-weight: var(--fw-regular);
     line-height: 1.6;
     min-height: 100vh;
-    overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100%;
 }
 
 /* Typography */
@@ -229,6 +231,12 @@ a:hover {
     transition: var(--transition-smooth);
 }
 
+@media (max-width: 768px) {
+    .header {
+        padding: var(--space-2) 0;
+    }
+}
+
 .header.scrolled {
     background: rgba(255, 255, 255, 0.95);
     box-shadow: var(--shadow-sm);
@@ -305,25 +313,27 @@ a:hover {
         top: 0;
         right: -100%;
         /* Start off-screen */
-        width: 80%;
-        max-width: 300px;
+        width: 100%;
+        max-width: none;
         height: 100vh;
         background: white;
         padding: var(--space-20) var(--space-6) var(--space-8);
         box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
-        transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        align-items: flex-start;
-        /* Left align items */
+        transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.3s;
+        align-items: flex-end;
+        /* Right align items */
         z-index: 1005;
+        visibility: hidden;
     }
 
     .nav-links.mobile-open {
         right: 0;
+        visibility: visible;
     }
 
     .nav-link {
         width: 100%;
-        text-align: left;
+        text-align: right;
         padding: var(--space-3) 0;
         font-size: 1.125rem;
         border-bottom: 1px solid var(--clr-slate-100);
@@ -412,10 +422,6 @@ a:hover {
         margin: 0 0 var(--space-8) 0;
         font-size: 1.125rem;
     }
-
-    .button-group {
-        justify-content: flex-start;
-    }
 }
 
 /* Buttons */
@@ -464,6 +470,12 @@ a:hover {
     gap: var(--space-4);
     justify-content: center;
     flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+    .button-group {
+        justify-content: flex-start;
+    }
 }
 
 /* Cards */
@@ -617,11 +629,10 @@ a:hover {
 /* Carousel */
 .carousel-container {
     width: 100vw;
+    max-width: 100%;
     position: relative;
     left: 50%;
-    right: 50%;
-    margin-left: -50vw;
-    margin-right: -50vw;
+    transform: translateX(-50%);
     background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.8) 10%, rgba(255, 255, 255, 0.8) 90%, rgba(255, 255, 255, 0));
     padding: var(--space-8) 0;
     overflow: hidden;
@@ -672,6 +683,7 @@ a:hover {
     z-index: 2000;
     background: white;
     overflow-y: auto;
+    overflow-x: hidden;
     padding: var(--space-8) var(--space-4);
     border-radius: 0;
     border: none;
@@ -737,8 +749,24 @@ a:hover {
 
 .prose img {
     max-width: 100%;
+    height: auto;
     border-radius: var(--radius-lg);
     margin: var(--space-6) 0;
+}
+
+.prose pre,
+.prose code {
+    max-width: 100%;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.prose table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    max-width: 100%;
 }
 
 /* Publication Styles */
