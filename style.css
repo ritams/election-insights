@@ -1,6 +1,6 @@
 /* Modern Scientific Design System */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap');
 
 /* Reset */
 *,
@@ -71,7 +71,7 @@ html {
     --clr-border-hover: var(--clr-primary-300);
 
     /* Typography */
-    --ff-heading: "Space Grotesk", sans-serif;
+    --ff-heading: "Outfit", sans-serif;
     --ff-body: "Inter", sans-serif;
     --ff-mono: "JetBrains Mono", monospace;
 
@@ -476,6 +476,7 @@ a:hover {
 }
 
 .hero-title {
+    /* Elegant font */
     margin-bottom: var(--space-6);
     background: linear-gradient(135deg, var(--clr-slate-900) 0%, var(--clr-primary-800) 100%);
     -webkit-background-clip: text;
