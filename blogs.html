@@ -218,7 +218,7 @@
                 card.innerHTML = `
                     <h3>${title}</h3>
                     <p>${excerpt}</p>
-                    <p class="read-more-link"><a href="#" class="subtle-link" data-content="${html.replace(/"/g, '&quot;').replace(/\n/g, '\\n')}">Read more...</a></p>
+                    <p class="read-more-link"><a href="#" class="arrow-link" data-content="${html.replace(/"/g, '&quot;').replace(/\n/g, '\\n')}">Read more <span>→</span></a></p>
                 `;
                 blogsContainer.appendChild(card);
             } catch (error) {
@@ -293,9 +293,10 @@
 
         // Handle read more clicks
         document.addEventListener('click', function (e) {
-            if (e.target.classList.contains('subtle-link')) {
+            const link = e.target.closest('.arrow-link');
+            if (link && link.dataset.content) {
                 e.preventDefault();
-                const content = e.target.dataset.content.replace(/\\n/g, '\n');
+                const content = link.dataset.content.replace(/\\n/g, '\n');
 
                 const modal = document.createElement('div');
                 modal.className = 'blog-full-card';

@@ -1011,3 +1011,28 @@ a:hover {
 ::-webkit-scrollbar-thumb:hover {
     background: var(--clr-slate-400);
 }
+
+/* Arrow Link Style */
+.arrow-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
+    color: var(--clr-primary-600);
+    font-weight: var(--fw-medium);
+    text-decoration: none;
+    transition: var(--transition-base);
+    cursor: pointer;
+    font-size: 0.875rem;
+}
+
+.arrow-link:hover {
+    color: var(--clr-primary-700);
+}
+
+.arrow-link span {
+    transition: transform 0.2s ease;
+}
+
+.arrow-link:hover span {
+    transform: translateX(4px);
+}
